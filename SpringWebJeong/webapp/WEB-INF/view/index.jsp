@@ -36,7 +36,7 @@
 </head>
 <body>
 	<h3>WelCome!!</h3>
-	${sessionScope.memberBean.memberId} 님! 환영합니다!
+	${sessionScope.memberBean.memberId} 님! 환영합니다!아닙니다.
 	
 	<br/><br/>
 	<button type="button" id="btnSelectMember">내 정보 보기</button>

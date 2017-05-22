@@ -19,5 +19,8 @@ public class SessionInterceptor extends HandlerInterceptorAdapter {
 		}
 		response.sendRedirect("/member/loginForm.do");
 		return false; // 화면에 아무런 변화가 없다
+		
+		
+		
 	}
 } // end of class
