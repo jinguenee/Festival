@@ -7,15 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%for(int i = 0; i < 100 ; i++){ %>
-helloooo  <br/>
-<% }%>
-
-<form action="/TestController?cmd=login"method="post">
-ID : <input type="text" name = "id" value=""/><br/>
-PW : <input type="text" name = "pass" value=""/><br/>
-<input type="submit" value="LogIn">
-
-</form>
+	Hello Spring
 </body>
 </html>
