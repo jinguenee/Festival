@@ -9,5 +9,6 @@ public class IndexController {
 	public String index(){
 		return "index";
 	}
+	// 김영관 바보야
 }
  
