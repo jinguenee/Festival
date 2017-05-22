@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util" 
+	
+	 xmlns:aop="http://www.springframework.org/schema/aop"
+	 xmlns:tx="http://www.springframework.org/schema/tx"
+	
+	xsi:schemaLocation="
+   http://www.springframework.org/schema/beans     
+   http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context-4.0.xsd
+   http://www.springframework.org/schema/mvc
+   http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+   
+   http://www.springframework.org/schema/util
+   http://www.springframework.org/schema/util/spring-util-3.0.xsd
+   
+   http://www.springframework.org/schema/aop 
+   http://www.springframework.org/schema/aop/spring-aop.xsd
+   http://www.springframework.org/schema/tx 
+   http://www.springframework.org/schema/tx/spring-tx.xsd
+   ">
+
+
+	<mvc:annotation-driven />
+
+
+	<context:component-scan base-package="com.test.web" />
+
+	<!-- DB연결정보 -->
+	<!-- 클래스 이름이 dataSource 라는 데이터 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="org.mariadb.jdbc.Driver" /> <!-- MySQL DB연결  -->
+		<property name="url" value="jdbc:mariadb://localhost:3307/kosta" /> <!-- 내 MySQL 포트 연결 -->
+		<property name="username" value="kosta1" /> <!-- value 값에 table명  -->
+		<property name="password" value="kosta1" /> <!-- value 값에 table명  -->
+	</bean>
+
+	<!-- MyBatis 설정연결 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="/WEB-INF/mybatis-config.xml" /> <!-- 해당 경로에 xml을 만들어준다! -->
+		<property name="typeAliasesPackage" value="com.test.web" />
+		<property name="mapperLocations"
+			value="classpath*:com/test/web/**/dao/mapper/*Mapper.xml" /> <!-- 패키지와 xml 파일을 만들어 줘야한다!!! -->
+	</bean>
+
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory" />
+	</bean>
+	
+	
+	
+	<!-- AOP -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" rollback-for="Exception" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut id="txPointcut"
+			expression="execution(* com.test.web.*.service.*ServiceImpl.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />
+	</aop:config>
+
+
+	<!-- dao 스캔 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.test.web.**.dao" />
+	</bean>
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- 인터셉터 설정 -->
+<!-- 	<mvc:interceptors> -->
+<!-- 		<mvc:interceptor> -->
+<!-- 			<mvc:mapping path="/**" /> -->
+
+			<!-- 인터셉터에 걸리지 않는 예외사항 설정 -->
+<!-- 			<mvc:exclude-mapping path="/member/*loginForm*" /> -->
+<!-- 			<mvc:exclude-mapping path="/member/*loginProc*" /> -->
+<!-- 			<mvc:exclude-mapping path="/member/*insertMemberForm*" /> -->
+<!-- 			<mvc:exclude-mapping path="/member/*insertMemberProc*" /> -->
+
+<!-- 			<bean class="com.test.web.common.SessionInterceptor"></bean> -->
+
+<!-- 		</mvc:interceptor> -->
+<!-- 	</mvc:interceptors> -->
+	
+</beans>
