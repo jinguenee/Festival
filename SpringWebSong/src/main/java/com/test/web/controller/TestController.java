@@ -44,5 +44,8 @@ public class TestController {
 	public String kyg(){
 		return null;
 	}
+	public String good(){
+		return "good";
+	}
 
 }
