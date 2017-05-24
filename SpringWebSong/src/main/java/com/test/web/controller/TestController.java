@@ -41,5 +41,8 @@ public class TestController {
 	public String yg(){
 		return null;
 	}
+	public String kyg(){
+		return null;
+	}
 
 }
