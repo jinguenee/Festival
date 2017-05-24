@@ -10,5 +10,36 @@ public class TestController {
 	public String index() {
 		return "jsadf";
 	}
+
 	
+	public String test2() {
+		return null;
+	}
+	
+	public String test33() {
+		return null;
+	}
+	
+	public String test55() {
+		return null;
+	}
+	
+	public String test6() {
+		return null;
+	}
+	public String test77() {
+		return null;
+	}
+	
+	public String test88() {
+		return null;
+	}
+	
+	public String test999() {
+		return null;
+	}
+	public String yg(){
+		return null;
+	}
+
 }
