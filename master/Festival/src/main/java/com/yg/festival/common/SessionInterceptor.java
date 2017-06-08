@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.test.web.member.bean.MemberBean;
 
 public class SessionInterceptor extends HandlerInterceptorAdapter {
 
