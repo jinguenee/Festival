@@ -1,4 +1,4 @@
-﻿package com.yg.festival.member.dao;
+package com.yg.festival.member.dao;
 
 import java.util.List;
 
@@ -16,7 +16,10 @@ public interface MemberDao {
 	public int login(MemberBean memberBean);
 	
 	/** 회원정보를 조회해서 가져온다. **/
-	public MemberBean selectMember(MemberBean bean);
+	public MemberBean selectLoginMember(MemberBean bean);
+	
+	/** 회원정보를 조회해서 가져온다. **/
+	public MemberBean selectJoinMember(MemberBean bean);
 	
 	/** 회원정보를 조회해서 리스트로 가져온다. **/
 	public List<MemberBean> selectMemberList(MemberBean memberBean);

@@ -67,7 +67,7 @@ public class MemberController {
 		//DB select
 		try{
 			
-			if(memberService.selectMember(memberBean) != null){
+			if(memberService.selectJoinMember(memberBean) != null){
 				resMap.put(Constants.RESULT, Constants.RESULT_OK);
 				
 			}
@@ -210,7 +210,7 @@ public class MemberController {
 			if (resultCnt == 1) {
 				result = Constants.OK;
 				resultMsg = "로그인 성공";
-				memberBean = memberService.selectMember(memberBean);
+				memberBean = memberService.selectLoginMember(memberBean);
 				// 세션에 userBean으로 member 정보 저장
 				SessionUtil.setMemberBean(request, memberBean);
 			} else {

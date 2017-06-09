@@ -1,4 +1,4 @@
-﻿package com.yg.festival.member.service;
+package com.yg.festival.member.service;
 
 import java.util.List;
 
@@ -14,7 +14,10 @@ public interface MemberService {
 	public int login(MemberBean memberBean) throws Exception;
 	
 	/** 회원 정보 가져오기 **/
-	public MemberBean selectMember(MemberBean bean) throws Exception;
+	public MemberBean selectLoginMember(MemberBean bean) throws Exception;
+	
+	/** 회원 정보 가져오기 **/
+	public MemberBean selectJoinMember(MemberBean bean) throws Exception;
 
 	/** 회원정보를 조회해서 리스트로 가져온다. **/
 	public List<MemberBean> selectMemberList(MemberBean memberBean) throws Exception;

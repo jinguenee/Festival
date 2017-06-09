@@ -52,10 +52,10 @@
 		WHERE 1=1
 		AND member_id = #{memberId}
 		AND
-		member_pw = #{memberPw}
+		member_pw = password(#{memberPw})
 	</select>
-	<!-- 회원 정보 가져오기 -->
-	<select id="selectMember" parameterType="memberBean" resultType="memberBean">
+	<!-- 로그인 시 회원 정보 가져오기 -->
+	<select id="selectLoginMember" parameterType="memberBean" resultType="memberBean">
 		SELECT
 		<include refid="memberColumns" />
 		FROM member
@@ -69,6 +69,15 @@
 				AND member_pw = #{memberPw}
 			</otherwise>
 		</choose>
+	</select>
+	<!-- 회원가입 시 회원 정보 가져오기 -->
+	<select id="selectJoinMember" resultType="memberBean" parameterType="memberBean">
+	    SELECT
+	    	<include refid="memberColumns"/>
+	    FROM
+	    	member
+	    WHERE
+  			member_id = #{memberId} 
 	</select>
 	
 	<!-- 회원정보 List 조회 -->

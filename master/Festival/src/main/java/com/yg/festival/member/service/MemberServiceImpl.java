@@ -1,4 +1,4 @@
-﻿package com.yg.festival.member.service;
+package com.yg.festival.member.service;
 
 import java.util.List;
 
@@ -28,8 +28,14 @@ public class MemberServiceImpl implements MemberService {
 	
 	/**회원 정보 가져오기**/
 	@Override
-	public MemberBean selectMember(MemberBean bean) throws Exception {
-		return memberDao.selectMember(bean);
+	public MemberBean selectLoginMember(MemberBean bean) throws Exception {
+		return memberDao.selectLoginMember(bean);
+	}
+	
+	/**회원 정보 가져오기**/
+	@Override
+	public MemberBean selectJoinMember(MemberBean bean) throws Exception {
+		return memberDao.selectJoinMember(bean);
 	}
 
 	/**여러명 회원 정보 가져오기**/
