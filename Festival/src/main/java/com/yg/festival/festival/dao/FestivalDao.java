@@ -1,0 +1,55 @@
+﻿package com.yg.festival.festival.dao;
+
+import java.util.List;
+
+import com.yg.festival.common.bean.PagingBean;
+import com.yg.festival.festival.bean.FestivalBasicBean;
+import com.yg.festival.festival.bean.FestivalBean;
+import com.yg.festival.festival.bean.FestivalFileBean;
+
+public interface FestivalDao {
+	// 메인 축제정보 전체 불러오기
+	public List<FestivalBean> selectFestivalList(PagingBean pBean);
+	// 기본 축제정보 전체 불러오기
+	public List<FestivalBasicBean> selectFestivalBasicList(FestivalBasicBean fBBean);
+	// 파일 축제정보 전체 불러오기
+	public List<FestivalFileBean> selectFestivalFileList(FestivalFileBean fFBean);
+
+	/** 게시판를 조회해서 리스트로 가져온다. **/
+	public List<FestivalBean> selectBoardList(PagingBean bean);
+	/** 전체 레코드 갯수를 가져온다. **/
+	public int selectBoardListTotalCount(PagingBean bean);
+	
+	
+	// 메인 축제정보 한건 불러오기
+	public FestivalBean selectFestival(FestivalBean fBean);
+	// 메인 축제정보 전체 갯수 
+	public int selectFestivalCount();
+	// 기본 축제정보 한건 불러오기
+	public FestivalBasicBean selectFestivalBasic(FestivalBean fBean);
+	// 파일 축제정보 한건 불러오기
+	public List<FestivalFileBean> selectFestivalFile(FestivalBean fBean);
+	
+	
+	// 축제 추가(FestivalBean)
+	public int insertFestival(FestivalBean fBean);
+	// 축제 추가(FestivalBasicBean)
+	public int insertFestivalBasic(FestivalBasicBean fBBean);
+	// 축제 추가(FestivalFileBean)
+	public int insertFestivalFile(FestivalFileBean fFBean);
+	
+	// 축제 변경(FestivalBean)
+	public int updateFestival(FestivalBean fBean);
+	// 축제 변경(FestivalBasicBean)
+	public int updateFestivalBasic(FestivalBasicBean fBBean);
+	// 축제 변경(FestivalFileBean)
+	public int updateFestivalFile(FestivalFileBean fFBean);
+	
+	// 축제 삭제(FestivalBean)
+	public int deleteFestival(FestivalBean fBean);
+	// 축제 삭제(FestivalBasicBean)
+	public int deleteFestivalBasic(FestivalBasicBean fBBean);
+	// 축제 삭제(FestivalFileBean)
+	public int deleteFestivalFile(FestivalFileBean fFBean);
+
+} // end of interface
