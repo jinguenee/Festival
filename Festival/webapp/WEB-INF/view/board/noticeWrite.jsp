@@ -31,7 +31,7 @@
 			
 			
 			$.ajax({
-                url: "/board/noticeWriteAjax.do",
+                url: "/Festival/board/noticeWriteAjax.do",
                 processData: false,
                 contentType: false,
                 type: 'POST',
@@ -45,7 +45,7 @@
                 		//화면이동 처리
 	                	var boardNo = data.LbBean;
 	                	
-                		location.href="/board/noticeView.do?boardNo=" + boardNo.boardNo;
+                		location.href="/Festival/board/noticeView.do?boardNo=" + boardNo.boardNo;
                 	}
                 }
             }); // end of ajax
@@ -60,15 +60,15 @@
 			<div class="sub_wrap">
 				<div class="sub_bg">
 					<h1>커뮤니티 Community</h1>
-					<img src="/images/community.jpg" alt="서브배경" />	
+					<img src="/Festival/images/community.jpg" alt="서브배경" />	
 				</div>
 				<!-- 서브 네비 -->
 				<div class="sub_nav">
 					<div class="sub_menu">
 						<h3>커뮤니티</h3>
 						<ul>
-							<li><a href="noticeList.do?pageNo=1" class="on">자유게시판</a></li>
-							<li><a href="qna_list.html"> Q&amp;A </a></li>
+							<li><a href="/Festival/board/noticeList.do?pageNo=1" class="on">자유게시판</a></li>
+							<li><a href="/Festival/qna.do"> Q&amp;A </a></li>
 						</ul>
 					</div>
 					<div class="sub_title">

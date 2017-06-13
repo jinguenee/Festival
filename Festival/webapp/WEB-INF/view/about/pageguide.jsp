@@ -10,11 +10,11 @@
 <meta name="viewport"
 	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>GUIDE</title>
-<link rel="stylesheet" type="text/css" href="/css/reset.css">
-<link href="/css/main_style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/Festival/css/reset.css">
+<link href="/Festival/css/main_style.css" rel="stylesheet" type="text/css" />
 <!--header,footer,전체셋팅-->
-<link rel="stylesheet" type="text/css" href="/css/style(sub).css">
-<script src="/js/jquery-1.12.4.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/Festival/css/style(sub).css">
+<script src="/Festival/js/jquery-1.12.4.min.js"></script>
 <!-- 스크립트 끝 -->
 <script>
      $(function(){
@@ -68,7 +68,7 @@
 			<div class="sub_wrap">
 				<div class="sub_bg">
 					<h1>소개페이지 ABOUT</h1>
-					<img src="/images/about.jpg" alt="서브배경" />	
+					<img src="/Festival/images/about.jpg" alt="서브배경" />	
 				</div>
 				<!-- 서브 네비 -->
 				<div class="sub_nav">
@@ -95,7 +95,7 @@
                         <li>
                         <div id="title" class="clear_after ac_title">메인</div>
                         <div id="showAc" class="ac_cont">
-                        <img class="acImg" src="/images/guide1.png" /><br />
+                        <img class="acImg" src="/Festival/images/guide1.png" /><br />
                         1. 로고 : 메인으로 이동 &nbsp;&nbsp;&nbsp;&nbsp;2. 로그인/마이페이지 : 로그인 / 로그인시 개인정보확인&nbsp;&nbsp;&nbsp;&nbsp;3. 소개 : 인사말 / 페이지 가이드 화면으로 이동<br/>4. 축제 : 축제 정보 리스트 화면으로 이동&nbsp;&nbsp;&nbsp;&nbsp;
                         5. 커뮤니티 : 자유게시판 / QnA 게시판 화면으로 이동&nbsp;&nbsp;&nbsp;&nbsp;6. 검색 : 축제정보를 검색하고싶은 내용을 통해 검색 
                         </div>
@@ -103,7 +103,7 @@
                         <li>
                         <div id="title" class="clear_after ac_title">소개</div>
                         <div id="showAc" class="ac_cont">
-                        <img class="acImg" src="/images/guide1.png" /><br />
+                        <img class="acImg" src="/Festival/images/guide1.png" /><br />
                         1. 로고 : 메인으로 이동 &nbsp;&nbsp;&nbsp;&nbsp;2. 로그인/마이페이지 : 로그인 / 로그인시 개인정보확인&nbsp;&nbsp;&nbsp;&nbsp;3. 소개 : 인사말 / 페이지 가이드 화면으로 이동<br/>4. 축제 : 축제 정보 리스트 화면으로 이동&nbsp;&nbsp;&nbsp;&nbsp;
                         5. 커뮤니티 : 자유게시판 / QnA 게시판 화면으로 이동&nbsp;&nbsp;&nbsp;&nbsp;6. 검색 : 축제정보를 검색하고싶은 내용을 통해 검색 
                         </div>
@@ -111,7 +111,7 @@
                         <li>
                         <div id="title" class="clear_after ac_title">축제</div>
                         <div id="showAc" class="ac_cont">
-                         <img class="acImg" src="/images/guide1.png" /><br />
+                         <img class="acImg" src="/Festival/images/guide1.png" /><br />
                         1. 로고 : 메인으로 이동 &nbsp;&nbsp;&nbsp;&nbsp;2. 로그인/마이페이지 : 로그인 / 로그인시 개인정보확인&nbsp;&nbsp;&nbsp;&nbsp;3. 소개 : 인사말 / 페이지 가이드 화면으로 이동<br/>4. 축제 : 축제 정보 리스트 화면으로 이동&nbsp;&nbsp;&nbsp;&nbsp;
                         5. 커뮤니티 : 자유게시판 / QnA 게시판 화면으로 이동&nbsp;&nbsp;&nbsp;&nbsp;6. 검색 : 축제정보를 검색하고싶은 내용을 통해 검색 
                         </div>
@@ -119,7 +119,7 @@
                         <li>
                         <div id="title" class="clear_after ac_title">커뮤니티</div>
                         <div id="showAc" class="ac_cont">
-                         <img class="acImg" src="/images/guide1.png" /><br />
+                         <img class="acImg" src="/Festival/images/guide1.png" /><br />
                         1. 로고 : 메인으로 이동 &nbsp;&nbsp;&nbsp;&nbsp;2. 로그인/마이페이지 : 로그인 / 로그인시 개인정보확인&nbsp;&nbsp;&nbsp;&nbsp;3. 소개 : 인사말 / 페이지 가이드 화면으로 이동<br/>4. 축제 : 축제 정보 리스트 화면으로 이동&nbsp;&nbsp;&nbsp;&nbsp;
                         5. 커뮤니티 : 자유게시판 / QnA 게시판 화면으로 이동&nbsp;&nbsp;&nbsp;&nbsp;6. 검색 : 축제정보를 검색하고싶은 내용을 통해 검색 
                         </div>
@@ -128,7 +128,7 @@
                         <li>
                         <div id="title" class="clear_after ac_title">로그인</div>
                         <div id="showAc" class="ac_cont">
-                         <img class="acImg" src="/images/guide1.png" /><br />
+                         <img class="acImg" src="/Festival/images/guide1.png" /><br />
                         1. 로고 : 메인으로 이동 &nbsp;&nbsp;&nbsp;&nbsp;2. 로그인/마이페이지 : 로그인 / 로그인시 개인정보확인&nbsp;&nbsp;&nbsp;&nbsp;3. 소개 : 인사말 / 페이지 가이드 화면으로 이동<br/>4. 축제 : 축제 정보 리스트 화면으로 이동&nbsp;&nbsp;&nbsp;&nbsp;
                         5. 커뮤니티 : 자유게시판 / QnA 게시판 화면으로 이동&nbsp;&nbsp;&nbsp;&nbsp;6. 검색 : 축제정보를 검색하고싶은 내용을 통해 검색 
                         </div>

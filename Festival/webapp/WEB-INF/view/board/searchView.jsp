@@ -12,7 +12,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="/js/jquery-1.12.4.min.js"></script>
+<script src="/Festival/js/jquery-1.12.4.min.js"></script>
 
 <script type="text/javascript">
 	function check() {
@@ -152,7 +152,7 @@ h1 {
 	<!-- 섹션 -->
 	<section>
 
-	<form action="/board/searchView.do" method="get" class="search_form"
+	<form action="/Festival/board/searchView.do" method="get" class="search_form"
 		name="search">
 		<select name="searchType" style="display: none">
 			<option value="title">제목</option>
@@ -184,14 +184,14 @@ h1 {
 	<!-- 검색 결과 나오는 화면 -->
 	<div class="paging">
 		<c:if test="${pBean.groupNo > 1}">
-			<a href="/board/searchView.do?pageNo=${pBean.pageStartNo - 1}">&lt;이전</a>
+			<a href="/Festival/board/searchView.do?pageNo=${pBean.pageStartNo - 1}">&lt;이전</a>
 		</c:if>
 		<br />
 		<c:forEach var="i" begin="${pBean.pageStartNo}"
 			end="${pBean.pageEndNo}">
 			<c:choose>
 				<c:when test="${pBean.pageNo != i}">
-					<a href="/board/searchView.do?pageNo=${i}&searchType=${param.searchType}&searchText=${param.searchText}">[${i}]</a>
+					<a href="/Festival/board/searchView.do?pageNo=${i}&searchType=${param.searchType}&searchText=${param.searchText}">[${i}]</a>
 				</c:when>
 				<c:otherwise>
 				 	[${i}]
@@ -199,7 +199,7 @@ h1 {
 			</c:choose>
 		</c:forEach> 
 		<c:if test="${pBean.groupNo < pBean.totalGroupCount}">
-			<a href="/board/searchView.do?pageNo=${pBean.pageEndNo + 1}">다음&gt;</a>
+			<a href="/Festival/board/searchView.do?pageNo=${pBean.pageEndNo + 1}">다음&gt;</a>
 		</c:if>
 	</div>
 	</section>

@@ -10,20 +10,20 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<title>master_Festival_page</title>
 	
-	<link rel="stylesheet" type="text/css" href="/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="/css/main_style.css" /> <!--header,footer,전체셋팅-->
-	<link rel="stylesheet" type="text/css" href="/css/style(sub).css" />
+	<link rel="stylesheet" type="text/css" href="/Festival/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/Festival/css/main_style.css" /> <!--header,footer,전체셋팅-->
+	<link rel="stylesheet" type="text/css" href="/Festival/css/style(sub).css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 	
-	<script type="text/javascript" src="/js/common/angular-1.6.4/angular.js"></script>
-	<script type="text/javascript" src="/js/common/jquery/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="/Festival/js/common/angular-1.6.4/angular.js"></script>
+	<script type="text/javascript" src="/Festival/js/common/jquery/jquery-1.12.4.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/js/common/common.js"></script>
+	<script type="text/javascript" src="/Festival/js/common/common.js"></script>
 	
 	<!-- AngulerJS 외부js 가져오기 -->
-	<script type="text/javascript" src="/js/festival/festivalApp.js"></script>
-	<script type="text/javascript" src="/js/festival/festivalController.js"></script>
+	<script type="text/javascript" src="/Festival/js/festival/festivalApp.js"></script>
+	<script type="text/javascript" src="/Festival/js/festival/festivalController.js"></script>
 	
 	<style>
         html, body{font-family:'Noto Sans KR', sans-serif, dotum, '돋움', gulim, '굴림', Arial, AppleGothic, verdana, helvetica; font-size:14px; letter-spacing:-0.05em; line-height:1.6; font-weight:400; color:#333; margin:0; overflow-x:hidden; !important;}
@@ -50,14 +50,14 @@
 		<div class="sub_wrap">
 			<div class="sub_bg">
 				<h1>관리자 페이지</h1>
-				<img src="/images/community.jpg" alt="서브배경" />	
+				<img src="/Festival/images/community.jpg" alt="서브배경" />	
 			</div>
 			<!-- 서브 네비 -->
 			<div class="sub_nav">
 				<div class="sub_menu">
 					<h3>관리자 페이지</h3>
 					<ul>
-						<li><a href="/festival/master_managerFestival.do" class="on">축제 관리</a></li>
+						<li><a href="/Festival/festival/master_managerFestival.do" class="on">축제 관리</a></li>
 					</ul>
 				</div>
 				<div class="sub_title">
@@ -67,7 +67,7 @@
 				<!-- 축제 관리 메인 시작 -->
 				<div class="sub_content" ng-app="festivalApp" ng-controller="FestivalController" ng-init="master_selectFestivalList()">
 					<div class="btn_wrap">
-						<button class="btn_write" id="btnInsertFestival" onclick="location.href='/festival/master_insertFestival.do'">축제 추가</button>
+						<button class="btn_write" id="btnInsertFestival" onclick="location.href='/Festival/festival/master_insertFestival.do'">축제 추가</button>
 						<div class="find">
 							<input type="text" class="input" placeholder="검색할 단어를 입력하세요" ng-model="text_input" />
 						</div>
@@ -94,7 +94,7 @@
 							</tr>
 							<tr ng-repeat="festival in festivalList | filter : text_input">
 								<td>{{festivalList.length - $index}}</td>
-								<td><a href="/festival/master_selectFestival.do?festival_no={{festival.festival_no}}">{{festival.festival_name}}</a></td>
+								<td><a href="/Festival/festival/master_selectFestival.do?festival_no={{festival.festival_no}}">{{festival.festival_name}}</a></td>
 								<td>{{festival.fb_startdate}} ~ {{festival.fb_enddate}}</td>
 								<td>{{festival.thema1}}</td>
 								<td>{{festival.thema2}}</td>

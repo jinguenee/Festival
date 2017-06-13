@@ -7,7 +7,6 @@
 		<script type="text/javascript">
 		$(function(){
 			
-			
 			//정규표현식
 			$("#memberId").keyup(function(event){ 
 				if (!(event.keyCode >=37 && event.keyCode<=40)) {
@@ -64,7 +63,7 @@
 
 					$.ajax({
 						type : "post",
-						url : "/member/updateMemberProc.do",
+						url : "/Festival/member/updateMemberProc.do",
 						data : {
 							memberId : "${memberBean.memberId}",
 							memberPw : $("#memberPw").val(),
@@ -78,7 +77,7 @@
 							console.log(data);
 							if(data.result == "ok"){
 								alert(data.resultMsg);
-								location.replace("/member/myList.do?memberId=${memberBean.memberId}");
+								location.replace("/Festival/member/myList.do?memberId=${memberBean.memberId}");
 								return;
 							}else{
 								alert(data.resultMsg);
@@ -107,14 +106,14 @@
 			<div class="sub_wrap">
 				<div class="sub_bg">
 					<h1>회원정보수정 MYPAGE</h1>
-					<img src="/images/sub_bg.png" alt="서브배경" />	
+					<img src="/Festival/images/sub_bg.png" alt="서브배경" />	
 				</div>
 				<!-- 서브 네비 -->
 				<div class="sub_nav">
 					<div class="sub_menu">
 						<h3>계정관리</h3>
 						<ul>
-				            <li><a href="/member/myList.do" class="on">회원정보수정</a></li>
+				            <li><a href="/Festival/member/myList.do" class="on">회원정보수정</a></li>
 						</ul>
 					</div>
 					<div class="sub_title">

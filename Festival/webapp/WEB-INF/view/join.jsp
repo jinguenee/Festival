@@ -6,9 +6,9 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 		<title>JOIN</title>
-		<link rel="stylesheet" type="text/css" href="/css/reset.css">
-		<link rel="stylesheet" type="text/css" href="/css/style(sub).css">
-		<script src="/js/jquery-1.12.4.js"></script>
+		<link rel="stylesheet" type="text/css" href="/Festival/css/reset.css">
+		<link rel="stylesheet" type="text/css" href="/Festival/css/style(sub).css">
+		<script src="/Festival/js/jquery-1.12.4.js"></script>
 		<script type="text/javascript">
 		$(function(){ 
 			//전체선택 체크박스 클릭
@@ -60,7 +60,7 @@
 			}else{
 				$.ajax({
 					type : "post",
-					url : "/joinDoubleCheckProc.do",
+					url : "/Festival/joinDoubleCheckProc.do",
 					data : {
 						memberId : $("#memberId").val()
 					},
@@ -138,7 +138,7 @@
 					
 					$.ajax({
 						type : "post",
-						url : "/joinProc.do",
+						url : "/Festival/joinProc.do",
 						data : {
 							memberId : $("#memberId").val(),
 							memberPw : $("#memberPw").val(),
@@ -153,7 +153,7 @@
 							console.log(data);
 							if(data.result == "ok"){
 								alert(data.resultMsg);
-								location.replace("/member/loginForm.do");
+								location.replace("/Festival/member/loginForm.do");
 								return;
 							}else{
 								alert(data.resultMsg);
@@ -184,7 +184,7 @@
 			<div class="sub_wrap">
 				<div class="sub_bg">
 					<h1>회원가입 Join</h1>
-					<img src="images/sub_bg.png" alt="서브배경" />	
+					<img src="/Festival/images/sub_bg.png" alt="서브배경" />	
 				</div>
 				<!-- 서브 네비 -->
 				<div class="sub_nav">

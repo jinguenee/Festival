@@ -3,24 +3,25 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <script type="text/javascript">
-function memberDeleteAjax(){
+function memberDeleteAjax(no){
 	var result = confirm('정말로 지우시겠습니까?');
 	if(result) { 
 		$.ajax({
-			url : "/member/memberDeleteAjax.do",
+			url : "/Festival/member/memberDeleteAjax.do",
 			method : "POST",
 			data : {
-				memberId:'${memberBean.memberId}'
+				memberNo: no
 			},
 			dataType : "json",
 			async: false,
 			success : function(data) {
 				if (data.result == "ok") {
 					alert(data.resultMsg);
+					location.replace("/Festival/member/memberList.do");
 				} else {
 					alert(data.resultMsg);
 				}
@@ -37,14 +38,14 @@ function memberDeleteAjax(){
 			<div class="sub_wrap">
 				<div class="sub_bg">
 					<h1>멤버관리 MemberManagement</h1>
-					<img src="/images/sub_bg.png" alt="서브배경" />	
+					<img src="/Festival/images/sub_bg.png" alt="서브배경" />	
 				</div>
 				<!-- 서브 네비 -->
 				<div class="sub_nav">
 					<div class="sub_menu">
 						<h3>멤버관리</h3>
 						<ul>
-					    <li><a href="/member/memberList.do" class="on">멤버관리</a></li>
+					    <li><a href="/Festival/member/memberList.do" class="on">멤버관리</a></li>
 						</ul>
 					</div>
 					<div class="sub_title">
@@ -87,7 +88,7 @@ function memberDeleteAjax(){
 									<td>${bean.memberPhone}</td>
 									<td>${bean.memberAge}</td>
 									<td>${bean.memberGender}</td>
-									<td><button class="btn_write" onclick="memberDeleteAjax(); return false;" >회원삭제</button></td>
+									<td><button class="btn_write" onclick="memberDeleteAjax('${bean.memberNo}'); return false;" >회원삭제</button></td>
 								</tr>
 								</c:forEach>
 							</table>

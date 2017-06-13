@@ -23,14 +23,14 @@
          <div class="sub_wrap">
             <div class="sub_bg">
                <h1>커뮤니티 Community</h1>
-               <img src="/images/community.jpg" alt="서브배경" />   
+               <img src="/Festival/images/community.jpg" alt="서브배경" />   
             </div>
             <!-- 서브 네비 -->
             <div class="sub_nav">
                <div class="sub_menu">
                   <h3>커뮤니티</h3>
                   <ul>
-                      <li><a href="/board/noticeList.do" class="on">자유게시판</a></li>
+                      <li><a href="/Festival/board/noticeList.do" class="on">자유게시판</a></li>
 							<li><a href="/qna.do"> Q&amp;A </a></li>
                   </ul>
                </div>

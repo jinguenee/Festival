@@ -51,7 +51,7 @@ function memberLoginAjax(){
 	var userInputId = $("#memberId").val();
 	$("#memberId").empty();
 	$.ajax({
-		url : "/member/loginAjax.do",
+		url : "/Festival/member/loginAjax.do",
 		method : "POST",
 		data : {
 			memberId : $("#memberId").val(),
@@ -62,7 +62,7 @@ function memberLoginAjax(){
 		success : function(data) {
 			if (data.result == "ok") {
 				setCookie("userInputId", userInputId, 30);//30일 동안 쿠키 저장
-				location.href="/index.do"
+				location.href="/Festival/index.do"
 			} else {
 				alert(data.resultMsg);
 			}
@@ -79,14 +79,14 @@ function memberLoginAjax(){
 			<div class="sub_wrap">
 				<div class="sub_bg">
 					<h1>로그인 Login</h1>
-					<img src="/images/sub_bg.png" alt="서브배경" />	
+					<img src="/Festival/images/sub_bg.png" alt="서브배경" />	
 				</div>
 				<!-- 서브 네비 -->
 				<div class="sub_nav">
 					<div class="sub_menu">
 						<h3>계정관리</h3>
 						<ul>
-					    <li><a href="/member/loginForm.do" class="on">로그인</a></li>
+					    <li><a href="/Festival/member/loginForm.do" class="on">로그인</a></li>
 						</ul>
 					</div>
 					<div class="sub_title">
@@ -106,7 +106,7 @@ function memberLoginAjax(){
 							<button class="btn_submit" type="button" onclick="memberLoginAjax(); return false;">로그인</button>
 							<div class="join">
 								<ul>
-									<li><a href="/join.do">회원가입</a></li>
+									<li><a href="/Festival/join.do">회원가입</a></li>
 									<!--<li><a href="find.html">ID/PW찾기</a></li>-->
 								</ul>
 							</div>

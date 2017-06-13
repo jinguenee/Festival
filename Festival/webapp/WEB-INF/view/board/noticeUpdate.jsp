@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 	<script type="text/javascript">
@@ -20,7 +20,7 @@
 			
 			$.ajax({
                 type: 'POST',
-                url: "/board/noticeUpdateAjax.do",
+                url: "/Festival/board/noticeUpdateAjax.do",
                 processData: false,
                 contentType: false,
                 data: formData,
@@ -31,7 +31,7 @@
                 	
                 	if(data.result == "ok") {
                 		//화면이동 처리
-                		location.href="noticeList.do?pageNo=1";
+                		location.href="/Festival/board/noticeList.do?pageNo=1";
                 	}
                 }
             }); // end of ajax
@@ -42,7 +42,7 @@
 				if(confirm("삭제 하시겠습니까?")) {
 					$.ajax({
 		    			type: 'POST',
-		    			url: "/board/deleteBoardFileAjax.do",
+		    			url: "/Festival/board/deleteBoardFileAjax.do",
 		                data: {
 		                	boardNo : "${boardList.boardNo}",
 		                },
@@ -65,15 +65,15 @@
 			<div class="sub_wrap">
 				<div class="sub_bg">
 					<h1>커뮤니티 Community</h1>
-					<img src="/images/community.jpg" alt="서브배경" />	
+					<img src="/Festival/images/community.jpg" alt="서브배경" />	
 				</div>
 				<!-- 서브 네비 -->
 				<div class="sub_nav">
 					<div class="sub_menu">
 						<h3>커뮤니티</h3>
 						<ul>
-							<li><a href="noticeList.do?pageNo=1" class="on">자유게시판</a></li>
-							<li><a href="qna_list.html"> Q&amp;A </a></li>
+							<li><a href="/Festival/board/noticeList.do?pageNo=1" class="on">자유게시판</a></li>
+							<li><a href="/Festival/qna.do"> Q&amp;A </a></li>
 						</ul>
 					</div>
 					<div class="sub_title">

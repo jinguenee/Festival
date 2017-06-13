@@ -10,20 +10,20 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<title>master_Festival_page</title>
 	
-	<link rel="stylesheet" type="text/css" href="/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="/css/main_style.css" /> <!--header,footer,전체셋팅-->
-	<link rel="stylesheet" type="text/css" href="/css/style(sub).css" />
+	<link rel="stylesheet" type="text/css" href="/Festival/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/Festival/css/main_style.css" /> <!--header,footer,전체셋팅-->
+	<link rel="stylesheet" type="text/css" href="/Festival/css/style(sub).css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 	
-	<script type="text/javascript" src="/js/common/angular-1.6.4/angular.js"></script>
-	<script type="text/javascript" src="/js/common/jquery/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="/Festival/js/common/angular-1.6.4/angular.js"></script>
+	<script type="text/javascript" src="/Festival/js/common/jquery/jquery-1.12.4.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/js/common/common.js"></script>
+	<script type="text/javascript" src="/Festival/js/common/common.js"></script>
 	
 	<!-- AngulerJS 외부js 가져오기 -->
-	<script type="text/javascript" src="/js/festival/festivalApp.js"></script>
-	<script type="text/javascript" src="/js/festival/festivalController.js"></script>
+	<script type="text/javascript" src="/Festival/js/festival/festivalApp.js"></script>
+	<script type="text/javascript" src="/Festival/js/festival/festivalController.js"></script>
 	
 	<style>
         html, body{font-family:'Noto Sans KR', sans-serif, dotum, '돋움', gulim, '굴림', Arial, AppleGothic, verdana, helvetica; font-size:14px; letter-spacing:-0.05em; line-height:1.6; font-weight:400; color:#333; margin:0; overflow-x:hidden; !important;}
@@ -92,7 +92,7 @@
 					
 					$.ajax({
 						type : "post",
-						url : "/festival/master_deleteFestivalProc.do",
+						url : "/Festival/festival/master_deleteFestivalProc.do",
 						data : {
 							festival_no : "${fBean.festival_no}"
 						},
@@ -100,7 +100,7 @@
 						success : function(data) {
 							if (data.result == "ok") {
 								alert(data.resultMsg);
-								location.replace("/festival/master_managerFestival.do");
+								location.replace("/Festival/festival/master_managerFestival.do");
 							} else {
 								alert(data.resultMsg);
 							}
@@ -113,7 +113,7 @@
 			
 				$.ajax({
 					type : "post",
-					url : "/festival/master_fixTitleImageProc.do",
+					url : "/Festival/festival/master_fixTitleImageProc.do",
 					data : {
 						festival_no : "${fBean.festival_no}",
 						ff_no : $("input[type=radio][name=festival_img_check]:checked").val()
@@ -141,14 +141,14 @@
 		<div class="sub_wrap">
 			<div class="sub_bg">
 				<h1>관리자 페이지</h1>
-				<img src="/images/community.jpg" alt="서브배경" />	
+				<img src="/Festival/images/community.jpg" alt="서브배경" />	
 			</div>
 			<!-- 서브 네비 -->
 			<div class="sub_nav">
 				<div class="sub_menu">
 					<h3>관리자 페이지</h3>
 					<ul>
-						<li><a href="/festival/master_managerFestival.do" class="on">축제 관리</a></li>
+						<li><a href="/Festival/festival/master_managerFestival.do" class="on">축제 관리</a></li>
 					</ul>
 				</div>
 				<div class="sub_title">
@@ -241,7 +241,8 @@
 								<th>축제 사진<button style="float: right;" type="button" id="fix_image">대표사진 설정</button></th>
 								<td>
 									<c:forEach var="fFBean" items="${fFBeanList}" varStatus="status">
-										<img class="festival_imgSize" src="${fFBean.ff_realpath}" alt="${fFBean.ff_realpath}"/>
+										<img class="festival_imgSize" src="${initParam.context_root}/Festival/${fFBean.ff_realpath}" alt="${initParam.context_root}/Festival/${fFBean.ff_realpath}"/>
+										
 										
 										<c:choose>
 											<c:when test="${fFBean.ff_titleimage ne null}">
@@ -255,9 +256,9 @@
 								</td>
 							</tr>
 						</table>
-						<button type="button" class="btn_submit" onclick="location.href='/festival/master_updateFestival.do?festival_no=${fBean.festival_no}'">변경모드 가기</button>
+						<button type="button" class="btn_submit" onclick="location.href='/Festival/festival/master_updateFestival.do?festival_no=${fBean.festival_no}'">변경모드 가기</button>
 						<button type="button" class="btn_submit" id="btn_deleteFestival">삭제하기</button>
-						<button type="button" class="btn_submit" onclick="location.href='/festival/master_managerFestival.do'">뒤로가기</button>
+						<button type="button" class="btn_submit" onclick="location.href='/Festival/festival/master_managerFestival.do'">뒤로가기</button>
 					</div>
 				</div>
 			</div>

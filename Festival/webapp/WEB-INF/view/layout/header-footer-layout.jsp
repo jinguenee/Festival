@@ -9,23 +9,23 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<title>LOGIN</title>
-<link rel="stylesheet" type="text/css" href="/css/reset.css" />
-<link href="/css/main_style.css" rel="stylesheet" type="text/css" />
+<title>YG's World</title>
+<link rel="stylesheet" type="text/css" href="/Festival/css/reset.css" />
+<link href="/Festival/css/main_style.css" rel="stylesheet" type="text/css" />
 <!--header,footer,전체셋팅-->
-<link rel="stylesheet" type="text/css" href="/css/style(sub).css" />
-<script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/Festival/css/style(sub).css" />
+<script type="text/javascript" src="/Festival/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 	function logoutAjax() {
 		$.ajax({
-			url : "/member/logoutAjax.do",
+			url : "/Festival/member/logoutAjax.do",
 			method : "POST",
 			data : {},
 			dataType : "json",
 
 			success : function(data) {
 				if (data.result == "ok") {
-					location.href = "/index.do"
+					location.href = "/Festival/index.do"
 				} else {
 					alert(data.resultMsg);
 				}

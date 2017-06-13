@@ -9,10 +9,10 @@
 <meta name="viewport"
 	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>FESTIVAL</title>
-<link rel="stylesheet" type="text/css" href="css/reset.css" />
-<link rel="stylesheet" type="text/css" href="css/main_style.css" />
+<link rel="stylesheet" type="text/css" href="/Festival/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="/Festival/css/main_style.css" />
 <!--header,footer,전체셋팅-->
-<link rel="stylesheet" type="text/css" href="css/style(sub).css" />
+<link rel="stylesheet" type="text/css" href="/Festival/css/style(sub).css" />
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -20,7 +20,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="js/jquery-1.12.4.min.js"></script>
+<script src="/Festival/js/jquery-1.12.4.min.js"></script>
 <!-- 검색 스크립트 -->
 <script type="text/javascript">
 function check() {
@@ -121,7 +121,7 @@ a:hover {
 	<div class="section_search">
 		<div class="text_guide">놀러가고 싶으신 곳이 있으신가요? 축제에 관련된 내용을 아래에서
 			검색해보세요!</div>
-		<form action="/board/searchView.do" method="get" class="search_form"
+		<form action="/Festival/board/searchView.do" method="get" class="search_form"
 			name="search">
 			<select name="searchType" style="display: none">
 				<option value="title">제목</option>

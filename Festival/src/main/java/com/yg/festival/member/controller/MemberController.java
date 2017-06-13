@@ -183,6 +183,7 @@ public class MemberController {
 		try {
 			list = memberService.selectMemberList(bean);
 			model.addAttribute("memberList", list);
+			model.addAttribute("memberBean", bean);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -199,13 +200,16 @@ public class MemberController {
 	@ResponseBody
 	public Map<String, Object> memberDeleteAjax (MemberBean memberBean,HttpServletRequest request) throws Exception{
 		Map<String, Object> map = new HashMap<String, Object>();
+		map.put(Constants.RESULT, Constants.RESULT_FAIL);
+		map.put(Constants.RESULT_MSG, "멤버 삭제하기 실패!!");
+
 		String result = null;
 		String resultMsg = null;
 		try {
 			memberService.deleteMember(memberBean);
 			result = Constants.OK;
 			resultMsg = "회원삭제 성공";
-			SessionUtil.removeMemberBean(request);
+//			SessionUtil.removeMemberBean(request);
 		} catch (Exception e) {
 			e.printStackTrace();
 			result = Constants.FAIL;
@@ -215,5 +219,4 @@ public class MemberController {
 		map.put("result", result);
 		return map;
 	}
-	
 }

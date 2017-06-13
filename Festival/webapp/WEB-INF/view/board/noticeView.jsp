@@ -2,18 +2,18 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 	<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한) -->
     <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
     <!-- Bootstrap -->
-<!--     <link href="/css/bootstrap.css" rel="stylesheet" type="text/css"/> -->
+<!--     <link href="/Festival/css/bootstrap.css" rel="stylesheet" type="text/css"/> -->
     <script type="text/javascript">
     	function deleteBoard() {
     		$.ajax({
     			type: 'POST',
-    			url: "/board/deleteBoardAjax.do",
+    			url: "/Festival/board/deleteBoardAjax.do",
                 data: {
                 	boardNo : "${boardList.boardNo}",
                 },
@@ -21,7 +21,7 @@
                 	alert(data.resultMsg);
                 	if(data.result == "ok") {
                 		//화면이동 처리
-                		location.href="noticeList.do?pageNo=1";
+                		location.href="/Festival/board/noticeList.do?pageNo=1";
                 	}
                 }
             }); // end of ajax
@@ -34,15 +34,15 @@
 			<div class="sub_wrap">
 				<div class="sub_bg">
 					<h1>커뮤니티 Community</h1>
-					<img src="/images/community.jpg" alt="서브배경" />	
+					<img src="/Festival/images/community.jpg" alt="서브배경" />	
 				</div>
 				<!-- 서브 네비 -->
 				<div class="sub_nav">
 					<div class="sub_menu">
 						<h3>커뮤니티</h3>
 						<ul>
-							<li><a href="noticeList.do?pageNo=1" class="on">자유게시판</a></li>
-							<li><a href="qna_list.html"> Q&amp;A </a></li>
+							<li><a href="/Festival/board/noticeList.do?pageNo=1" class="on">자유게시판</a></li>
+							<li><a href="/Festival/qna.do"> Q&amp;A </a></li>
 						</ul>
 					</div>
 					<div class="sub_title">
@@ -271,16 +271,16 @@
                             });
                               
                             $( "#list" ).click(function( event ) {
-                                location.href='/community/notice';
+                                location.href='/Festival/community/notice';
                             });
                             $( "#modify" ).click(function( event ) {
-                                location.href='/community/modify/notice/${community.id}';
+                                location.href='/Festival/community/modify/notice/${community.id}';
                             });
                             $( "#delete" ).click(function( event ) {
-                                location.href='/community/delete/notice/${community.id}';
+                                location.href='/Festival/community/delete/notice/${community.id}';
                             });
                             $( "#write" ).click(function( event ) {
-                                location.href='/community/notice/edit';
+                                location.href='/Festival/community/notice/edit';
                             });
                         });
                     </script>
@@ -291,9 +291,9 @@
             <div class="sub_content">
 						<div class="write_table">
             
-            <button type="submit" class="btn_submit" onclick="location.href='noticeUpdate.do?boardNo=${boardList.boardNo}'">수정하기</button>
+            <button type="submit" class="btn_submit" onclick="location.href='/Festival/board/noticeUpdate.do?boardNo=${boardList.boardNo}'">수정하기</button>
             <button type="submit" class="btn_delete" onclick="deleteBoard()">삭제하기</button>
-			<button class="btn_back" onclick="location.href='noticeList.do'">뒤로가기</button>
+			<button class="btn_back" onclick="location.href='/Festival/board/noticeList.do'">뒤로가기</button>
         
                 </div>
             </div>
