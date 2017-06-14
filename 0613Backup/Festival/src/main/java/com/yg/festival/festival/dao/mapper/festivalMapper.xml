@@ -351,4 +351,65 @@
         	TRUNCATE(AVG(festival_reply.fr_starpoint), 1) DESC
         LIMIT 5
 	</select>
+	
+	<!-- 재환  Ang paging-->
+	<!-- FestivalBean List 조회 -->
+	<select id="selectFestivalListAng" resultType="festivalBean">
+	    SELECT
+	    	festival_no, festival_name, festival_detail_intro,
+			festival_detail_fee,
+			festival_detail_parking, festival_detail_time,
+			festival_detail_notice,
+			festival_location_x, festival_location_y,
+			thema1, thema2, thema3
+	    FROM
+	    	festival
+	    ORDER BY
+			festival_no DESC
+	    LIMIT #{pagingBean.startRow}, #{pagingBean.endRow}
+	</select>
+	<!-- FestivalBasicBean List 조회 -->
+	<select id="selectFestivalBasicListAng" resultType="festivalBasicBean">
+	    SELECT
+	    	fb_no, fb_address, fb_startdate,
+			fb_enddate, fb_org_name, fb_org_phone,
+			fb_org_link, festival_no
+		 
+	    FROM
+	    	festival_basic
+	    ORDER BY
+			festival_no DESC
+	    LIMIT #{pagingBean.startRow}, #{pagingBean.endRow}
+	</select>
+	<!-- 리스트 전체 갯수 조회 -->
+	<select id="selectFestivalTotalCount" parameterType="pagingBean" resultType="int">
+	    SELECT COUNT(*) FROM festival
+	</select>
+	
+	<!-- 진행중 -->
+   <update id="updateFestivalDate">
+      UPDATE festival
+      SET
+         thema3 = "진행중"
+      WHERE
+         festival_no IN (
+            SELECT festival_no 
+            FROM festival_basic 
+            WHERE date_format(now(),'%Y-%m-%d%') <![CDATA[>=]]> fb_startdate
+            AND date_format(now(),'%Y-%m-%d%') <![CDATA[<=]]> fb_enddate
+         )
+   </update>
+   <!-- 진행완료  -->
+   <update id="updateFestivalEnd">
+      UPDATE festival
+      SET
+         thema3 = "완료"
+      WHERE
+         festival_no IN (
+            SELECT festival_no 
+            FROM festival_basic 
+            WHERE date_format(now(),'%Y-%m-%d%') <![CDATA[>]]> fb_enddate
+            
+         )
+   </update>
 </mapper>

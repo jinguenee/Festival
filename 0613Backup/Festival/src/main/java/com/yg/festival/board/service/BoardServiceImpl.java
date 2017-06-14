@@ -8,8 +8,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.yg.festival.board.bean.BoardBean;
 import com.yg.festival.board.bean.BoardFileBean;
+import com.yg.festival.board.bean.BoardReplyBean;
 import com.yg.festival.board.dao.BoardDao;
 import com.yg.festival.board.dao.BoardFileDao;
+import com.yg.festival.board.dao.BoardReplyDao;
 import com.yg.festival.common.Util;
 import com.yg.festival.common.bean.PagingBean;
 
@@ -21,6 +23,9 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Autowired
 	private BoardFileDao boardFileDao;
+	
+	@Autowired
+	private BoardReplyDao boardReplyDao;
 
 	@Override
 	public int insertBoardFile(BoardBean bBean, BoardFileBean bfBean, String upPath) {
@@ -183,5 +188,28 @@ public class BoardServiceImpl implements BoardService {
 	public int selectBoardListTotalConut(PagingBean bean) throws Exception {
 		// TODO Auto-generated method stub
 		return boardDao.selectBoardListTotalConut(bean);
+	}
+	@Override
+	public int writeBoardReply(BoardReplyBean rBean) {
+		// TODO Auto-generated method stub
+		return boardReplyDao.writeBoardReply(rBean);
+	}
+
+	@Override
+	public List<BoardReplyBean> selectBoardReplyList(BoardReplyBean bean) {
+		// TODO Auto-generated method stub
+		return boardReplyDao.selectBoardReplyList(bean);
+	}
+
+	@Override
+	public BoardReplyBean selectBoardReply(BoardReplyBean bean) {
+		// TODO Auto-generated method stub
+		return boardReplyDao.selectBoardReply(bean);
+	}
+
+	@Override
+	public int deleteBoardReply(BoardReplyBean bean) {
+		// TODO Auto-generated method stub
+		return boardReplyDao.deleteBoardReply(bean);
 	}
 }

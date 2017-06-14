@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.yg.festival.board.bean.BoardBean;
 import com.yg.festival.board.bean.BoardFileBean;
+import com.yg.festival.board.bean.BoardReplyBean;
 import com.yg.festival.common.bean.PagingBean;
 
 public interface BoardService {
@@ -46,5 +47,17 @@ public interface BoardService {
 
 	/** 전체 레코드 개수를 가져온다. **/
 	public int selectBoardListTotalConut(PagingBean bean) throws Exception;
+	
+	/** 댓글 작성 부분 (재현) **/
+	public int writeBoardReply(BoardReplyBean rBean);
+	
+	/** 댓글 조회 (재현) **/
+	public List<BoardReplyBean> selectBoardReplyList(BoardReplyBean bean);
+	
+	/** 댓글 1건 조회 **/
+	public BoardReplyBean selectBoardReply(BoardReplyBean bean);
+	
+	/** 댓글 삭제 처리 **/
+	public int deleteBoardReply(BoardReplyBean bean);
 	
 }

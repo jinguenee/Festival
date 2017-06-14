@@ -1,4 +1,4 @@
-﻿package com.yg.festival.common.controller;
+package com.yg.festival.common.controller;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -25,10 +25,13 @@ public class IndexController {
 
 	// 관리자 - 축제 한건 정보 페이지 이동
 	@RequestMapping("/index")
-	public String index(FestivalBean fBean, Model model) {
-
+	public String index(FestivalBean fBean, FestivalBasicBean fBBean, Model model) {
 		try {
-
+			int res1 = festivalService.updateFestivalDate(fBBean);
+			int res2 = festivalService.updateFestivalEnd(fBBean);
+			if (res1 <= 0 && res2 <= 0) {
+				return "/errorPage500";
+			}
 			List<FestivalBean> fRstar = festivalService.selectRatingStar(fBean);
 			model.addAttribute("fFBeanList", fRstar);
 		} catch (Exception e) {

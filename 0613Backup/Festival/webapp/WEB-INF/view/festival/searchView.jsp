@@ -173,35 +173,44 @@ h1 {
 
    <div class="search_area">
       <c:forEach var="bean" items="${searchView}" varStatus="status">
+      <hr/>
          <strong>
             <div class="search_info" style="font-weight: bold;">
-               <a href="#">${bean.festival_name}</a>
+               <a href="/festival/festival_view.do?festival_no=${bean.festival_no}">${bean.festival_name}</a>
             </div>
          </strong>
          <span class="search_info_info">${bean.festival_detail_intro}</span>
+         <br/>   
       </c:forEach>
+           <hr/>
    </div>
+
    <!-- 검색 결과 나오는 화면 -->
-   <div class="paging">
-      <c:if test="${pBean.groupNo > 1}">
-         <a href="/festival/festival_view.do?festival_no=${pBean.pageStartNo - 1}">&lt;이전</a>
-      </c:if>
-      <br />
-      <c:forEach var="i" begin="${pBean.pageStartNo}"
-         end="${pBean.pageEndNo}">
-         <c:choose>
-            <c:when test="${pBean.pageNo != i}">
-               <a href="/festival/festival_view.do?festival_no=${i}&searchType=${param.searchType}&searchText=${param.searchText}">[${i}]</a>
-            </c:when>
-            <c:otherwise>
-                [${i}]
-            </c:otherwise>
-         </c:choose>
-      </c:forEach> 
-      <c:if test="${pBean.groupNo < pBean.totalGroupCount}">
-         <a href="/festival/searchView.do?pageNo=${pBean.pageEndNo + 1}">다음&gt;</a>
-      </c:if>
-   </div>
+    
+   
+   				<div class="page">
+   				
+							<ul>
+							 <c:if test="${pagingBean.groupNo > 1}">
+					               <li><a href="/festival/searchView.do?pageNo=${pBean.pageStartNo - 1}" class="on">&lt;</a></li>
+				            </c:if>
+				            <c:forEach var="i" begin="${pagingBean.pageStartNo}" end="${pagingBean.pageEndNo}">
+				            <c:choose>
+				               <c:when test="${pagingBean.pageNo != i}">
+				                  <li><a href="/festival/searchView.do?pageNo=${i}&searchType=${param.searchType}&searchText=${param.searchText}" class="on">${i}</a></li>
+				               </c:when>
+				               <c:otherwise>
+				                  <li class="on">${i}</li>
+				               </c:otherwise>
+				            </c:choose>
+				            </c:forEach>
+				            <c:if test="${pagingBean.groupNo < pagingBean.totalGroupCount}">
+				               <li><a href="/festival/searchView.do?pageNo=${pBean.pageEndNo + 1}" class="on">&gt;</a></li>
+				            </c:if>
+							
+							</ul>
+						</div>
+						
    </section>
    <!-- 색션 끝 -->
 

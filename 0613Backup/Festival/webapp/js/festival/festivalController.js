@@ -72,5 +72,45 @@ function FestivalController($rootScope, $scope, FestivalService) {
 			$scope.festivalList = totalFestivalInfo;
 		});
 	};
+    //재환
+	$scope.selectFestivalListAng = function(pageNo) {
+		var totalFestivalInfo = [];	
+    	if( $scope.pBean == undefined ) {
+    		$scope.pBean = {};
+    	}
+    	
+    	$scope.pBean.pageNo = pageNo;
+    	
+    	FestivalService.selectFestivalListAng($scope.pBean).then(function(data) {
+    		
+    		if (data.festivalList.length == data.festivalBasicList.length) {
+				for (var i = 0; i < data.festivalList.length; i++) {
+					totalFestivalInfo[i] = {
+							festival_no : data.festivalList[i].festival_no,
+							festival_name : data.festivalList[i].festival_name,
+							festival_detail_intro : data.festivalList[i].festival_detail_intro,
+							thema1 : data.festivalList[i].thema1,
+							thema2 : data.festivalList[i].thema2,
+							thema3 : data.festivalList[i].thema3,
+							
+							fb_startdate : data.festivalBasicList[i].fb_startdate,
+							fb_enddate : data.festivalBasicList[i].fb_enddate
+					}
+				}
+			} else {
+				alert("DB정보가 잘못되었습니다. 메인 축제정보와 기본 축제정보 테이블 갯수가 일치하지 않습니다.");
+				return;
+			}
+			
+			$scope.fBean = totalFestivalInfo;
+    		$scope.pBean = data.pagingBean; //페이징 정보
+    		
+    	});
+    	
+    };
+    //배열 생성 함수
+    $scope.getArr = function(num) {
+    	return new Array(num);
+    };
 };
 

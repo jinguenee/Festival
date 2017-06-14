@@ -11,7 +11,10 @@ import com.yg.festival.festival.bean.FestivalFileBean;
 import com.yg.festival.festival.bean.FestivalReplyBean;
 
 public interface FestivalDao {
-
+	//재환
+	public List<FestivalBean> selectFestivalListAng(@Param("festivalBean") FestivalBean fBean,@Param("pagingBean") PagingBean pBean);
+	public List<FestivalBasicBean> selectFestivalBasicListAng(@Param("festivalBasicBean") FestivalBasicBean fBBean,@Param("pagingBean") PagingBean pBean);
+	public int selectFestivalTotalCount();
 	// 전체 레코드 갯수를 가져온다.(페이징) / 현우
 	public int selectFestivalListTotalCount(PagingBean pBean);
 	// 메인 축제정보 전체 불러오기
@@ -72,4 +75,9 @@ public interface FestivalDao {
 	public int deleteFestivalReply(FestivalReplyBean fRBean);
 	// 축제 삭제(FestivalReplyBean)
 	public int deleteFestivalImage(FestivalFileBean fFBean);
+	
+	//진행여부 - 진행중
+	   public int updateFestivalDate(FestivalBasicBean fBBean);
+	   //진행여부 - 완료
+	   public int updateFestivalEnd(FestivalBasicBean fBBean);
 } // end of interface

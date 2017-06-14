@@ -3,7 +3,7 @@
 
 <mapper namespace="com.yg.festival.board.dao.BoardDao">
     
-   <sql id="boardColumns">
+    <sql id="boardColumns">
 		board_no AS boardNo,
 		board_title AS boardTitle,
 		board_content AS boardContent,
@@ -19,7 +19,7 @@
 		) AS memberName
 		
     </sql>
-   <!-- 전체 레코드 개수 조회 -->
+    <!-- 전체 레코드 개수 조회 -->
 	<select id="selectBoardListTotalConut" parameterType="pagingBean" resultType="int">
 		 SELECT 
 		 	count(*) 
@@ -49,6 +49,7 @@
 		LIMIT 
 			#{startRow},#{endRow}  
 	</select>
+	
     <!-- 게시글 정보 1건 조회  -->
     <select id="selectBoard"  parameterType="boardBean" resultType="boardBean">
 	    SELECT

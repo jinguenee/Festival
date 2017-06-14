@@ -31,5 +31,4 @@ public interface BoardDao {
 	/** 전체 레코드 개수를 가져온다. **/
 	public int selectBoardListTotalConut(PagingBean bean);
 
-
 }

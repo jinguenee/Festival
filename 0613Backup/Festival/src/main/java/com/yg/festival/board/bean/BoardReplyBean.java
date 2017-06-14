@@ -7,6 +7,7 @@ public class BoardReplyBean {
 	private String brDate;
 	private String memberNo;
 	private String boardNo;
+	private String memberName;
 	
 	public String getBrNo() {
 		return brNo;
@@ -38,7 +39,10 @@ public class BoardReplyBean {
 	public void setBoardNo(String boardNo) {
 		this.boardNo = boardNo;
 	}
-	
-	
-
+	public String getMemberName() {
+		return memberName;
+	}
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
+	}
 }

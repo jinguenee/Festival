@@ -10,7 +10,7 @@ festivalApp.factory("FestivalService", function($http){
 	//  			 = 메서드명 : 아래 메서드 이름
 	service.selectFestivalList = selectFestivalList;
 	service.master_selectFestivalList = master_selectFestivalList;
-	
+	service.selectFestivalListAng = selectFestivalListAng;
 	return service;
 	
 	function selectFestivalList(objParam) {
@@ -24,6 +24,15 @@ festivalApp.factory("FestivalService", function($http){
 	function master_selectFestivalList(objParam) {
 		return $http({
 			url : "/festival/master_selectFestivalListProc.do",
+			method : "post",
+			data : json2PostParams(objParam),
+			headers : {'Content-Type' : 'application/x-www-form-urlencoded'}
+		}).then(handlerSuccess, handlerError);
+	};
+    //재환
+	function selectFestivalListAng(objParam) {
+		return $http({
+			url : "/festival/selectFestivalListAng.do",
 			method : "post",
 			data : json2PostParams(objParam),
 			headers : {'Content-Type' : 'application/x-www-form-urlencoded'}

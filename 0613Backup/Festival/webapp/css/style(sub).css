@@ -137,7 +137,42 @@ input[name=question]:checked+label+.response {
 	background: no-repeat center center;
 	background-size: cover;
 }
+.form_search_info {
+   height: 40px;
+   width: 400px;
+   border: 1px solid #1b5ac2;
+   background: #ffffff;
+}
 
+.search_form {
+   width: 1200px;
+   margin: 0 40%;
+}
+
+.search_text {
+   font-size: 16px;
+   width: 325px;
+   padding: 10px;
+   border: 0px;
+   outline: none;
+   float: left;
+   height: 95%;
+}
+
+.search_btn {
+   width: 50px;
+   height: 100%;
+   border: 0px;
+   background: #1b5ac2;
+   outline: none;
+   float: right;
+   color: #ffffff;
+}
+
+.search_area {
+   width: 1200px;
+   margin: 0 auto;
+}
 /*************************************************************************/
 
 /* 자유게시판 */

@@ -2,7 +2,6 @@ package com.yg.festival.member.dao;
 
 import java.util.List;
 
-import com.yg.festival.common.bean.PagingBean;
 import com.yg.festival.member.bean.MemberBean;
 
 /**

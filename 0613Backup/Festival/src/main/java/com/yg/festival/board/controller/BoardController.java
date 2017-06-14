@@ -1,12 +1,13 @@
 package com.yg.festival.board.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.catalina.manager.util.SessionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -17,12 +18,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.yg.festival.board.bean.BoardBean;
 import com.yg.festival.board.bean.BoardFileBean;
 import com.yg.festival.board.bean.BoardReplyBean;
-import com.yg.festival.board.dao.BoardDao;
 import com.yg.festival.board.service.BoardService;
 import com.yg.festival.common.Constants;
 import com.yg.festival.common.bean.PagingBean;
 import com.yg.festival.member.bean.MemberBean;
-import com.yg.festival.member.service.MemberService;
 import com.yg.festival.utils.SessionUtil;
 
 @Controller
@@ -46,7 +45,7 @@ public class BoardController {
 	 * @return
 	 */
 	@RequestMapping("/board/noticeView")
-	public String noticeView(Model model, BoardBean bBean, BoardFileBean bfBean) {
+	public String noticeView(Model model, BoardBean bBean, BoardFileBean bfBean, BoardReplyBean brBean) {
 		
 		// 게시글 조회
 		BoardBean tempBean = boardService.selectBoard(bBean);
@@ -57,9 +56,23 @@ public class BoardController {
 		// 파일 업로드 조회
 		List<BoardFileBean> tempbfBean = boardService.selectBoardFileList(bBean);
 		
+//		BoardReplyBean tempbrBean = boardService.selectBoardReply(brBean);
+		
+		List<BoardReplyBean> tempbrList = boardService.selectBoardReplyList(brBean);
+		
+		List<BoardReplyBean> tt = new ArrayList<BoardReplyBean>();
+		for (int i = 0; i < tempbrList.size(); i++) {
+			if (tempbrList.get(i).getBoardNo().equals(bBean.getBoardNo())){
+				tt.add(tempbrList.get(i));
+			}
+		}
+		
 		model.addAttribute("boardList",tempBean);
 		model.addAttribute("tempBeanJoin", tempBeanJoin);
 		model.addAttribute("fileList", tempbfBean);
+		model.addAttribute("boardReplyList", tt);
+//		model.addAttribute("boardReplyBean", tempbrBean);
+		
 		
 		return "/board/noticeView";
 	}
@@ -80,6 +93,39 @@ public class BoardController {
 		resMap.put(Constants.RESULT_MSG, "게시글 상세보기 성공");
 		resMap.put("bBean", bBean); // 게시글 저장
 		
+		return resMap;
+	}
+	
+	/** 게시판  InsertReply AJAX **/
+	@RequestMapping("/board/noticeReplyViewAjax")
+	@ResponseBody
+	public Map<String, Object> noticeReplyViewAjax (BoardBean bean, BoardReplyBean rBean, HttpServletRequest request) {
+		
+		Map<String, Object> resMap = new HashMap<String, Object>();
+		
+		resMap.put(Constants.RESULT, Constants.RESULT_FAIL);
+		resMap.put(Constants.RESULT_MSG, "댓글 작성 실패");
+		
+		MemberBean mBean = SessionUtil.getMemberBean(request);
+		
+		rBean.setMemberNo(mBean.getMemberNo());
+		rBean.setMemberName(mBean.getMemberName());
+		
+		try {
+			int res = boardService.writeBoardReply(rBean);
+
+			List<BoardReplyBean> LbBean = boardService.selectBoardReplyList(rBean);
+
+			BoardReplyBean LbBeanIndex = LbBean.get(LbBean.size()-1);
+
+			if(res > 0) {
+				resMap.put(Constants.RESULT, Constants.RESULT_OK);
+				resMap.put(Constants.RESULT_MSG, "댓글 작성 성공");
+				resMap.put("BoardReplyBean", LbBeanIndex); // 게시글 저장
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 		return resMap;
 	}
 	
@@ -196,8 +242,7 @@ public class BoardController {
 		}
 		return resMap;
 	}
-	
-	/** 게시글 글  삭제 AJAX **/
+	/** 게시글 글 및 파일 삭제 AJAX **/
 	@RequestMapping("/board/deleteBoardAjax")
 	@ResponseBody
 	public Map<String, Object> deleteBoardAjax(BoardBean bBean, BoardFileBean bfBean) {
@@ -234,6 +279,28 @@ public class BoardController {
 			if(res > 0) {
 				resMap.put(Constants.RESULT, Constants.RESULT_OK);
 				resMap.put(Constants.RESULT_MSG, "파일 삭제 성공");
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return resMap;
+	}
+	
+	/** 댓글 삭제 AJAX **/
+	@RequestMapping("/board/deleteBoardReplyAjax")
+	@ResponseBody
+	public Map<String, Object> deleteBoardReplyAjax(BoardReplyBean brBean) {
+		
+		Map<String, Object> resMap = new HashMap<String, Object>();
+		resMap.put(Constants.RESULT, Constants.RESULT_FAIL);
+		resMap.put(Constants.RESULT_MSG, "댓글 삭제 실패");
+		
+		try {
+			int res = boardService.deleteBoardReply(brBean);
+			
+			if(res > 0) {
+				resMap.put(Constants.RESULT, Constants.RESULT_OK);
+				resMap.put(Constants.RESULT_MSG, "댓글 삭제 성공");
 			}
 		} catch(Exception e) {
 			e.printStackTrace();

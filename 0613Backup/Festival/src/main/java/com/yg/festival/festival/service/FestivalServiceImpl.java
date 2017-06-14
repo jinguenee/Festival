@@ -131,4 +131,33 @@ public class FestivalServiceImpl implements FestivalService {
 	public int deleteFestivalImage(FestivalFileBean fFBean) throws Exception {
 		return festivalDao.deleteFestivalImage(fFBean);
 	}
+//재환
+	@Override
+	public List<FestivalBean> selectFestivalListAng(FestivalBean fBean, PagingBean pBean) throws Exception {
+		// TODO Auto-generated method stub
+		return festivalDao.selectFestivalListAng(fBean, pBean);
+	}
+	@Override
+	public List<FestivalBasicBean> selectFestivalBasicListAng(FestivalBasicBean fBBean, PagingBean pBean)
+			throws Exception {
+		// TODO Auto-generated method stub
+		return festivalDao.selectFestivalBasicListAng(fBBean, pBean);
+	}
+	@Override
+	public int selectFestivalTotalCount() {
+		// TODO Auto-generated method stub
+		return festivalDao.selectFestivalTotalCount();
+	}
+	//진행여부-진행중
+	   @Override
+	   public int updateFestivalDate(FestivalBasicBean fBBean) throws Exception {
+	      
+	      return festivalDao.updateFestivalDate(fBBean);
+	   }
+	   //진행여부-완료
+	   @Override
+	   public int updateFestivalEnd(FestivalBasicBean fBBean) throws Exception {
+	      
+	      return festivalDao.updateFestivalEnd(fBBean);
+	   }
 } // end of class 

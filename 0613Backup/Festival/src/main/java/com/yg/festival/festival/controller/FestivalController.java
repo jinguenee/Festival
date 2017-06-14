@@ -1,4 +1,4 @@
-package com.yg.festival.festival.controller;
+﻿package com.yg.festival.festival.controller;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -26,10 +26,8 @@ import com.yg.festival.festival.bean.FestivalBasicBean;
 import com.yg.festival.festival.bean.FestivalBean;
 import com.yg.festival.festival.bean.FestivalFileBean;
 import com.yg.festival.festival.bean.FestivalReplyBean;
-import com.yg.festival.festival.dao.FestivalDao;
 import com.yg.festival.festival.service.FestivalService;
 import com.yg.festival.member.bean.MemberBean;
-import com.yg.festival.member.dao.MemberDao;
 import com.yg.festival.member.service.MemberService;
 
 @Controller
@@ -40,8 +38,6 @@ public class FestivalController {
 	@Value("#{config['file.upload.main.path']}")
 	private String FILE_UPLOAD_MAIN_PATH;
 
-	@Autowired
-	private FestivalDao festivalDao;
 	@Autowired
 	private FestivalService festivalService;
 	@Autowired
@@ -254,6 +250,7 @@ public class FestivalController {
 		return "/festival/master_insertFestival";
 	}
 
+
 	// 관리자 - 신규 축제 추가 처리
 	@RequestMapping("/festival/master_insertFestival_Proc")
 	@ResponseBody
@@ -362,7 +359,37 @@ public class FestivalController {
 		}
 		return 0;
 	} // end of insertFile()
-
+	//재환 - 관리자 축제 전체 정보 앵귤러 처리
+	@RequestMapping("/festival/selectFestivalListAng")
+	@ResponseBody
+	public Map<String, Object> selectFestivalListAng(FestivalBean fBean, FestivalBasicBean fBBean, 
+			PagingBean pagingBean) 
+	{
+		Map<String, Object> resMap = new HashMap<String, Object>();
+		resMap.put(Constants.RESULT, Constants.RESULT_FAIL);
+		resMap.put(Constants.RESULT_MSG, "회원 리스트 조회에 실패 하였습니다.");
+		
+		try {
+			//전체 회원 리스트 갯수 조회
+			int totRecord = festivalService.selectFestivalTotalCount();
+			//페이징 계산
+			pagingBean.calcPage(totRecord);
+			
+			List<FestivalBean> fList = festivalService.selectFestivalListAng(fBean, pagingBean);
+			List<FestivalBasicBean> fBList = festivalService.selectFestivalBasicListAng(fBBean, pagingBean);
+		
+			resMap.put("festivalList", fList);
+			resMap.put("festivalBasicList", fBList);
+			resMap.put("pagingBean", pagingBean);
+			
+			resMap.put(Constants.RESULT, Constants.RESULT_OK);
+			resMap.put(Constants.RESULT_MSG, "회원 리스트 조회에 성공 하였습니다.");
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return resMap;
+	}
 	// 관리자 - 축제 전체 정보 앵귤러 처리
 	@RequestMapping("/festival/master_selectFestivalListProc")
 	@ResponseBody
@@ -426,7 +453,7 @@ public class FestivalController {
 					if (res > 0) {
 						System.out.println("null 처리 성공!");
 					}
-					break;
+//					break;
 				}
 			}
 

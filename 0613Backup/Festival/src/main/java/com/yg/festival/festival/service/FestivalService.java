@@ -9,6 +9,10 @@ import com.yg.festival.festival.bean.FestivalFileBean;
 import com.yg.festival.festival.bean.FestivalReplyBean;
 
 public interface FestivalService {
+//재환
+	public List<FestivalBean> selectFestivalListAng(FestivalBean fBean, PagingBean pBean) throws Exception;
+	public List<FestivalBasicBean> selectFestivalBasicListAng(FestivalBasicBean fBBean, PagingBean pBean) throws Exception;
+	public int selectFestivalTotalCount();
 	// 메인 축제정보 전체 불러오기
 	public List<FestivalBean> selectFestivalList(PagingBean pBean) throws Exception;
 	// 기본 축제정보 전체 불러오기
@@ -61,4 +65,9 @@ public interface FestivalService {
 	public int deleteFestivalReply(FestivalReplyBean fRBean) throws Exception;
 	// 축제 삭제(FestivalFileBean)
 	public int deleteFestivalImage(FestivalFileBean fFBean) throws Exception;
+	
+	//진행여부 - 진행중
+   public int updateFestivalDate(FestivalBasicBean fBBean) throws Exception;
+   //진행여부 - 완료
+   public int updateFestivalEnd(FestivalBasicBean fBBean) throws Exception;
 } // end of interface
