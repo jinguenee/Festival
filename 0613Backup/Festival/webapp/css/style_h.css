@@ -275,7 +275,7 @@ input[name=question]:checked+label+.response {
 }
 
 .sub_content {
-    width: 1000px;
+    width: 1200px;
     max-width: 100%;
     /*    padding: 30px 10px;*/
     margin: 0 auto;

@@ -88,7 +88,8 @@
     				},
     				error : function(xhr, status, error){
     					console.log(xhr);
-    					alert("error\nxhr : " + xhr+ ", status"+status+", error : "+error);
+    					alert("로그인 후 입력하세요");
+//     					alert("error\nxhr : " + xhr+ ", status"+status+", error : "+error);
     				}
     			}); // end ajax
     		}); // end click
@@ -109,8 +110,8 @@
 					<div class="sub_menu">
 						<h3>커뮤니티</h3>
 						<ul>
-							<li><a href="noticeList.do?pageNo=1" class="on">자유게시판</a></li>
-							<li><a href="qna_list.html"> Q&amp;A </a></li>
+							<li><a href="/board/noticeList.do?pageNo=1" class="on">자유게시판</a></li>
+							<li><a href="/qna.do"> Q&amp;A </a></li>
 						</ul>
 					</div>
 					<div class="sub_title">

@@ -144,7 +144,7 @@ text-decoration
 								<th>축제번호</th>
 							</tr>
 							<tr ng-repeat="fb in fBean | filter : text_input">
-								<td>{{fBean.length - $index}}</td>
+								<td>{{(pBean.totalRecordCount - $index) - ((pBean.pageNo-1) * 10)}}</td>
 								<td><a
 									href="/festival/master_selectFestival.do?festival_no={{fb.festival_no}}">{{fb.festival_name}}</a></td>
 								<td>{{fb.fb_startdate}} ~ {{fb.fb_enddate}}</td>

@@ -86,8 +86,8 @@
 					<div class="sub_menu">
 						<h3>커뮤니티</h3>
 						<ul>
-							<li><a href="noticeList.do?pageNo=1" class="on">자유게시판</a></li>
-                            <li><a href="qna_list.html" >Q&amp;A</a></li>
+							<li><a href="/board/noticeList.do?pageNo=1" class="on">자유게시판</a></li>
+                            <li><a href="/qna.do" >Q&amp;A</a></li>
 						</ul>
 					</div>
 					<div class="sub_title">

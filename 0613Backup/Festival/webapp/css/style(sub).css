@@ -681,6 +681,9 @@ input[name=question]:checked+label+.response {
 	background-color: #fff;
 	position: relative;
 	text-decoration: underline;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 /** 2번 .gallery .gallery_box a.website 이줄 추가함 */

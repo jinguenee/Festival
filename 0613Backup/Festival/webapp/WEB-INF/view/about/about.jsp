@@ -31,6 +31,11 @@ a:hover {
         h1 {
 	margin: 0.67em 0;
 }
+@media screen and (max-width: 767px) {
+			footer {
+				display: none;
+			}
+		}
 </style>
 <body>
 	<!--메인 -->

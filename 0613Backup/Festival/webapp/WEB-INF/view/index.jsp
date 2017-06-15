@@ -77,6 +77,13 @@
 			color: #666666;
 			text-decoration: none
 		}
+		@media screen and (max-width: 767px) {
+			.index_section .main_visual{width: 100%; }
+			.index_section .main_visual .visual01, section .main_visual .visual02, section .main_visual .visual03{height: 400px;}
+			footer {
+				display: none;
+			}
+		}
 	</style>
 </head>
 <body>

@@ -278,7 +278,7 @@
                     </tr>
                     <tr>
                         <th class="info_table_t">축제 주관/주최 홈페이지</th>
-                        <td class="info_table_t"><a href="${fBBean.fb_org_link}">${fBBean.fb_org_link}</a></td>
+                        <td class="info_table_t"><a target="_blank" href="${fBBean.fb_org_link}">${fBBean.fb_org_link}</a></td>
                     </tr>
                 </tbody>
             </table>

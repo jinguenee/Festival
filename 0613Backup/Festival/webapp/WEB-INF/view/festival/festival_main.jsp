@@ -31,6 +31,11 @@
         a:visited{color:#333333; text-decoration:none}
         a:active{color:#333333; text-decoration:none}
         a:hover{color:#666666; text-decoration:none}olor:#666666; text-decoration:none}
+        @media screen and (max-width: 767px) {
+			footer {
+				display: none;
+			}
+		}
 	</style>
 	
 	<script type="text/javascript">

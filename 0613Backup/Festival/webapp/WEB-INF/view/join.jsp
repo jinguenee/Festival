@@ -197,7 +197,7 @@
 					<div class="sub_title">
 						<div class="rout">
 							<ul>
-								<li>홈</li>
+								<li>홈</li> >
 								<li>회원가입</li>
 							</ul>
 						</div>

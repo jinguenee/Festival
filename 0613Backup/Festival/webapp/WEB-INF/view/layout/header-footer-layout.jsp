@@ -34,6 +34,11 @@
 	}
 </script>
 <style>
+@media screen and (max-width: 767px) {
+			footer {
+				display: none;
+			}
+		}
 </style>
 <decorator:head />
 </head>
