@@ -74,6 +74,8 @@ public interface FestivalDao {
 	// 축제 삭제(FestivalReplyBean)
 	public int deleteFestivalReply(FestivalReplyBean fRBean);
 	// 축제 삭제(FestivalReplyBean)
+	public int deleteTotalFestivalReply(FestivalReplyBean fRBean);
+	// 축제 삭제(FestivalReplyBean)
 	public int deleteFestivalImage(FestivalFileBean fFBean);
 	
 	//진행여부 - 진행중

@@ -207,7 +207,7 @@ footer .grid ul li:nth-child(3) {
 		display: none;
 	}
 	header {
-		display: none;
+/* 		display: none; */
 		height: 65px;
 		padding: 0 2%;
 	}
@@ -270,19 +270,7 @@ footer .grid ul li:nth-child(3) {
 		{
 		margin-top: 0;
 	}
-	.gallery .gallery_box {
-		width: 100%;
-		margin-bottom: 30px;
-	}
-	.gallery .gallery_box img {
-		width: 100%;
-	}
-	.gallery .gallery_box a span {
-		display: none;
-	}
-	.gallery .gallery_box a:hover img {
-		opacity: 1;
-	}
+	
 	.notice {
 		margin-top: 30px;
 	}
@@ -290,5 +278,31 @@ footer .grid ul li:nth-child(3) {
 		display: none;
 		padding: 30px 10px;
 	}
+	.search_form .form_search_info .search_text {
+	    font-size: 16px;
+	    width: 80%;
+	    padding: 10px;
+	    border: 0px;
+	    outline: none;
+	    float: left;
+	    height: 95%;
+	}
+	.search_form .form_search_info .search_btn {
+	    width: 20%;
+	    height: 100%;
+	    border: 0px;
+	    background: #1b5ac2;
+	    outline: none;
+	    float: right;
+	    color: #ffffff;
+	}
+	.search_form .form_search_info {
+	    height: 40px;
+	    width: 60%;
+	    border: 1px solid #1b5ac2;
+	    background: #ffffff;
+	    margin: auto;
+	}
+	
 	
 }

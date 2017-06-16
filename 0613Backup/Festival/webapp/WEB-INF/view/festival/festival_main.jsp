@@ -9,9 +9,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<title>Festival_Main</title>
 	
-	<link rel="stylesheet" type="text/css" href="/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="/css/main_style.css" /> <!--header,footer,전체셋팅-->
-	<link rel="stylesheet" type="text/css" href="/css/style(sub).css" />
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 	
 	<script type="text/javascript" src="/js/common/angular-1.6.4/angular.js"></script>

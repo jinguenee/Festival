@@ -3,7 +3,12 @@
 <%@ taglib prefix="decorator"
 	uri="http://www.opensymphony.com/sitemesh/decorator"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<style>
+	 @media screen and (max-width: 767px) {
+			footer {
+				display: none;
+			}
+</style>
 <!--푸터 -->
 <footer>
 	<div class="grid">

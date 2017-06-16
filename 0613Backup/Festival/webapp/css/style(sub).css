@@ -142,11 +142,12 @@ input[name=question]:checked+label+.response {
    width: 400px;
    border: 1px solid #1b5ac2;
    background: #ffffff;
+   margin : auto;
 }
 
 .search_form {
    width: 1200px;
-   margin: 0 40%;
+   margin: auto;
 }
 
 .search_text {
@@ -412,7 +413,7 @@ input[name=question]:checked+label+.response {
 }
 
 .write_table {
-	width: 100%;
+	width: 95%;
 	text-align: center;
 }
 

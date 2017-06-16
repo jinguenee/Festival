@@ -12,10 +12,7 @@
 <meta name="viewport"
 	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>FESTIVAL</title>
-<link rel="stylesheet" type="text/css" href="/css/reset.css" />
-<link rel="stylesheet" type="text/css" href="/css/main_style.css" />
-<!--header,footer,전체셋팅-->
-<link rel="stylesheet" type="text/css" href="/css/style(sub).css" />
+
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -77,11 +74,27 @@
 			color: #666666;
 			text-decoration: none
 		}
+/* 		메인 페이지 반응형 설정 */
 		@media screen and (max-width: 767px) {
-			.index_section .main_visual{width: 100%; }
+			.index_section .section_search .text_guide {
+			    font-size: 15px;
+			    padding: 20px;
+			    text-align: center;
+			    font-weight: bold;
+			    color: dimgray;
+			}
+			.index_section .main_visual{width: 100%; height : 500px}
 			.index_section .main_visual .visual01, section .main_visual .visual02, section .main_visual .visual03{height: 400px;}
 			footer {
 				display: none;
+			}
+				/*메인*/
+			.index_section .main_visual .visual01 .imgslide {
+		    width: 100%;
+		    display: block;
+		    height: 500px;
+		    background: no-repeat center center;
+		    background-size: cover;
 			}
 		}
 	</style>

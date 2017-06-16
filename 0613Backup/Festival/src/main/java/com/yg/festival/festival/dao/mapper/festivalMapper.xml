@@ -272,6 +272,14 @@
 			festival_no = #{festival_no} AND
 			fr_no = #{fr_no}
 	</delete>
+	<!-- DB에서 축제 댓글 삭제하기 -->
+	<delete id="deleteTotalFestivalReply">
+		DELETE FROM
+			festival_reply
+		WHERE
+			festival_no = #{festival_no}
+			
+	</delete>
 	<!-- 이미지 삭제 -->
    <delete id="deleteFestivalImage">
       DELETE FROM
@@ -339,8 +347,8 @@
 	
 		<!-- 별점 평균 구하기 / 현우 -->
 	<select id="selectRatingStar"  resultType="festivalReplyBean">
-        SELECT 
-        	festival_reply.festival_no, festival_file.ff_titleimage, TRUNCATE(AVG(festival_reply.fr_starpoint), 1)
+       SELECT 
+        	 festival_file.ff_titleimage, TRUNCATE(AVG(festival_reply.fr_starpoint), 1), festival_reply.festival_no 
         from 
         	festival_reply left JOIN festival_file
         ON 

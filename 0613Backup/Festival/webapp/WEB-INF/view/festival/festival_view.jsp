@@ -198,7 +198,89 @@
             });
         }); // end of ready
     </script>
-   
+<style>
+.info_table {
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+    margin: 10px auto;
+    text-align: center;
+    font-size : 13px;
+    table-layout: fixed;
+    word-break:break-all;
+}
+@media screen and (max-width: 767px) {
+	footer {
+		display: none;
+	}
+	.about_guide {
+		width: 100%;
+		height: 700px;
+		margin: 0 auto;
+	}
+	.container {
+	    padding-right: 15px;
+	    padding-left: 15px;
+	    margin-right: auto;
+	    margin-left: auto;
+	    width: 100%;
+	}
+	.maptitle {
+	    width: 100%;
+	    margin: 50px auto;
+	}
+	.gallery {
+	    width: 100%;
+	    margin: 50px auto;
+	}
+	.about_guide .main_visual {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 250px;
+    text-align: center;
+    background-color: #aaa;
+    float: left;
+}
+
+.about_guide .main_visual .item img {
+    max-width: 100%;
+    width: 100%;
+    height: 250px;
+}
+.info_table {
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+    width: 100%;
+    height: 300px;
+    margin: 10px auto;
+    text-align: center;
+    font-size : 13px;
+    table-layout: fixed;
+    word-break:break-all;
+}
+.map .service_list {
+    width: 100%;
+    margin: 0 auto;
+}
+element.style {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    background: url(http://i1.daumcdn.net/dmaps/apis/loading_n.png);
+}
+/* .info_table_t_web{ */
+/* 	width: 145px; */
+/* 	display: block; */
+/* 	background-color: #fff; */
+/* 	position: relative; */
+/* 	text-decoration: underline; */
+/* 	white-space: nowrap; */
+/*     text-overflow: ellipsis; */
+/*     overflow: hidden; */
+/* } */
+}
+</style>
 </head>
 <body>
    <!--메인 -->
@@ -255,6 +337,7 @@
             <!--축제정보 우측-->
             <!--   table  -->
             <table class="info_table">
+           
                 <tbody>
                      <tr>
                         <th class="info_table_t">축제 이름</th>
@@ -277,8 +360,10 @@
                         <td class="info_table_t">${fBBean.fb_org_phone}</td>
                     </tr>
                     <tr>
-                        <th class="info_table_t">축제 주관/주최 홈페이지</th>
-                        <td class="info_table_t"><a target="_blank" href="${fBBean.fb_org_link}">${fBBean.fb_org_link}</a></td>
+                        <th class="info_table_t" >축제 주관/주최 홈페이지</th>
+                        <td class="info_table_t" >
+    					<a target="_blank" href="${fBBean.fb_org_link}">${fBBean.fb_org_link}</a>
+    					</td>
                     </tr>
                 </tbody>
             </table>
@@ -343,7 +428,7 @@
             <div class="map">
                 <div class="service_list">
                    
-                    <div id="map" style="width:1200px;height:400px;"></div>
+                    <div id="map" style="width:100%;height:400px;"></div>
                      
                      <script>
                        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 

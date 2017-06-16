@@ -63,6 +63,8 @@ public interface FestivalService {
 	public int deleteFestivalFile(FestivalFileBean fFBean) throws Exception;
 	// 축제 삭제(FestivalReplyBean)
 	public int deleteFestivalReply(FestivalReplyBean fRBean) throws Exception;
+	// 축제 삭제(FestivalReplyBean)
+	public int deleteTotalFestivalReply(FestivalReplyBean fRBean) throws Exception;
 	// 축제 삭제(FestivalFileBean)
 	public int deleteFestivalImage(FestivalFileBean fFBean) throws Exception;
 	

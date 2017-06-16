@@ -307,4 +307,9 @@ public class BoardController {
 		}
 		return resMap;
 	}
+	/** 웹 소켓 **/
+	@RequestMapping("/websocket")
+	   public String websocket() {
+	      return "/websocket";
+   }
 }

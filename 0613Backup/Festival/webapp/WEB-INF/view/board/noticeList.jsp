@@ -7,8 +7,6 @@
 <html>
 <head>
 	<script type="text/javascript">
-	
-
 		function search() {
 
 			var searchText = $("#searchText").val();
@@ -74,6 +72,7 @@
 	     });//end ready
 	</script>
 </head>
+<body>
 		<!--메인 -->
 		<section>
 			<div class="sub_wrap">
@@ -151,21 +150,11 @@
 				            </c:if>
 							
 							</ul>
-							
-        
-            
-           
-            
-         
-      
 						</div>
 					</div>
 				</div>
 			</div>
-			
-			
 		</section>
 		<!--메인끝 -->
-	</body>
 </body>
 </html>

@@ -1,4 +1,4 @@
-﻿package com.yg.festival.festival.controller;
+package com.yg.festival.festival.controller;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -552,7 +552,7 @@ public class FestivalController {
 	@RequestMapping("/festival/master_deleteFestivalProc")
 	@ResponseBody
 	public Map<String, Object> master_deleteFestivalProc(FestivalBean fBean, FestivalBasicBean fBBean,
-			FestivalFileBean fFBean) {
+			FestivalFileBean fFBean, FestivalReplyBean fRBean) {
 
 		Map<String, Object> resMap = new HashMap<String, Object>();
 		resMap.put(Constants.RESULT, Constants.RESULT_FAIL);
@@ -561,7 +561,9 @@ public class FestivalController {
 		try {
 
 			List<FestivalFileBean> tempFFBeanList = festivalService.selectFestivalFile(fBean);
-
+			
+			int res4 = festivalService.deleteTotalFestivalReply(fRBean);
+			
 			int res3 = festivalService.deleteFestivalFile(fFBean); // 파일정보 먼저
 																	// 삭제한다
 			int res2 = festivalService.deleteFestivalBasic(fBBean); // 기본정보
@@ -577,11 +579,11 @@ public class FestivalController {
 				}
 			}
 
-			if (res > 0 && res2 > 0) {
+			if (res3 > 0 && res2 > 0 && res4 > 0) {
 				resMap.put(Constants.RESULT, Constants.RESULT_OK);
 				resMap.put(Constants.RESULT_MSG, "축제 기본, 메인정보가 성공적으로 삭제되었습니다");
 			}
-			if (res3 > 0) {
+			if (res > 0) {
 				resMap.put(Constants.RESULT, Constants.RESULT_OK);
 				resMap.put(Constants.RESULT_MSG, "전체 축제정보가 성공적으로 삭제되었습니다");
 			}

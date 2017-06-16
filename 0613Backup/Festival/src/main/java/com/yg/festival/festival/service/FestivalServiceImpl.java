@@ -160,4 +160,9 @@ public class FestivalServiceImpl implements FestivalService {
 	      
 	      return festivalDao.updateFestivalEnd(fBBean);
 	   }
+	@Override
+	public int deleteTotalFestivalReply(FestivalReplyBean fRBean) throws Exception {
+		
+		return festivalDao.deleteTotalFestivalReply(fRBean);
+	}
 } // end of class 
