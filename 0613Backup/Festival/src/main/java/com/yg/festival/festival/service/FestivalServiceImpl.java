@@ -40,8 +40,8 @@ public class FestivalServiceImpl implements FestivalService {
 
 	// 축제 검색 / 현우
 	@Override
-	public List<FestivalBean> searchSelectFestivalList(FestivalBean fBean, PagingBean pBean) throws Exception {
-		return festivalDao.searchSelectFestivalList(fBean, pBean);  
+	public List<FestivalBean> searchSelectFestivalList(PagingBean pBean) throws Exception {
+		return festivalDao.searchSelectFestivalList(pBean);  
 	}
 	
 	// 회원정보 전체 리스트 갯수를 가져온다. / 현우

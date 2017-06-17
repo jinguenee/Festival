@@ -4,7 +4,6 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +20,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.yg.festival.common.Constants;
+import com.yg.festival.common.FCMSender;
 import com.yg.festival.common.bean.PagingBean;
+import com.yg.festival.common.bean.PushMsgBean;
 import com.yg.festival.festival.bean.FestivalBasicBean;
 import com.yg.festival.festival.bean.FestivalBean;
 import com.yg.festival.festival.bean.FestivalFileBean;
@@ -66,16 +67,16 @@ public class FestivalController {
 			// 페이징 계산
 			pBean.calcPage(totRecord);
 
-			List<FestivalBean> list = festivalService.searchSelectFestivalList(fBean, pBean);
+			List<FestivalBean> list = festivalService.searchSelectFestivalList(pBean);
 
-			List<FestivalBean> tempList = new ArrayList<FestivalBean>();
-			for (int i = 0; i < list.size(); i++) {
-				if (list.get(i).getFestival_name().contains(pBean.getSearchText())) {
-					tempList.add(list.get(i));
-				}
-			}
+//			List<FestivalBean> tempList = new ArrayList<FestivalBean>();
+//			for (int i = 0; i < list.size(); i++) {
+//				if (list.get(i).getFestival_name().contains(pBean.getSearchText())) {
+//					tempList.add(list.get(i));
+//				}
+//			}
 
-			model.addAttribute("searchView", tempList);
+			model.addAttribute("searchView", list);
 			model.addAttribute("pBean", pBean);
 
 		} catch (Exception e) {
@@ -255,7 +256,7 @@ public class FestivalController {
 	@RequestMapping("/festival/master_insertFestival_Proc")
 	@ResponseBody
 	public Map<String, Object> master_insertFestival_Proc(FestivalBean fBean, FestivalBasicBean fBBean,
-			FestivalFileBean fFBean, HttpServletRequest req) {
+			FestivalFileBean fFBean, HttpServletRequest req, MemberBean mBean) {
 
 		Map<String, Object> resMap = new HashMap<String, Object>();
 		resMap.put(Constants.RESULT, Constants.RESULT_FAIL);
@@ -288,7 +289,30 @@ public class FestivalController {
 				resMap.put("fBean", dbFBean);
 				req.getSession().setAttribute("sfBean", dbFBean);
 			}
-
+			
+			List<MemberBean> memberList = memberService.selectMemberList(mBean);
+			
+			for (int i = 0; i < memberList.size(); i++) {
+				if( memberList.get(i).getToken() != null) {
+					MemberBean temp = memberList.get(i);
+					// 푸쉬 보내는 값 설정
+					MemberBean dbMemBean = memberService.selectJoinMember(temp);
+					//메세지를 작성
+					PushMsgBean msgBean = new PushMsgBean();
+					msgBean.setTo( dbMemBean.getToken() );
+					PushMsgBean.Data data = new PushMsgBean.Data();
+					data.setTitle("테스트 이다. 받아라");
+					data.setMessage("메시지이다. 받아라");
+					msgBean.setData(data);
+					//푸시발송
+					boolean resBool = FCMSender.sendPushMsg(msgBean);
+					if(resBool) {
+						resMap.put(Constants.RESULT, Constants.RESULT_OK);
+						resMap.put(Constants.RESULT_MSG, "푸시발송 성공: " + temp.getMemberId());
+					}
+				}
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

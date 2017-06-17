@@ -45,6 +45,8 @@ public interface MemberDao {
 	/** 회원 비밀번호 찾기 **/
 	public MemberBean selectMemberPw(MemberBean memberBean);
 	
+	/** token값을 넣는다.**/
+	public int updateToken(MemberBean memberBean);
 //	/** 회원정보 리스트**/
 //	public List<MemberBean> memberList(PagingBean pagingBean);
 }

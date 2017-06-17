@@ -84,7 +84,12 @@ public class MemberServiceImpl implements MemberService {
 	public MemberBean selectMemberId(MemberBean memberBean) throws Exception {
 		return memberDao.selectMemberId(memberBean);
 	}
-
+	
+	/** 토큰 값을 넣는다.**/
+	@Override
+	public int updateToken(MemberBean memberBean) throws Exception {
+		return memberDao.updateToken(memberBean);
+	}
 //	/**회원 리스트**/
 //	@Override
 //	public List<MemberBean> memberList(PagingBean pagingBean) throws Exception {

@@ -99,7 +99,6 @@
 	    WHERE
   			member_id = #{memberId} 
 	</select>
-	
 	<!-- 회원정보 List 조회 -->
 	<select id="selectMemberList" resultType="memberBean" parameterType="memberBean">
 	    SELECT
@@ -166,7 +165,13 @@
 		WHERE 1=1
 		AND member_id = #{memberId}
 	</select>
-	
+	<!--  토큰 업데이트 -->
+	<update id="updateToken">
+       UPDATE member SET
+          token = #{token}
+         WHERE
+            member_id = #{memberId}
+    </update>
  	<!-- 회원정보 리스트  --> 
 <!-- 	<select id="memberList" parameterType="pagingBean" resultType="memberBean"> -->
 <!-- 	SELECT * FROM -->

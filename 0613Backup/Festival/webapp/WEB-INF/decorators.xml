@@ -6,6 +6,7 @@
 	예외 URL 패턴
 	<excludes>
 		<pattern>/member/naver*</pattern>
+		<pattern>/websocket*</pattern>
 	</excludes>
 
 	<!-- 헤더 적용 레이아웃  -->

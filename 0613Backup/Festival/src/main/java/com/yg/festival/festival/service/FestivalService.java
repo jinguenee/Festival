@@ -23,7 +23,7 @@ public interface FestivalService {
 	// 메인 축제정보 전체 갯수
 	public int selectFestivalCount() throws Exception;
 	// 메인 축제정보 검색 리스트 / 현우
-	public List<FestivalBean> searchSelectFestivalList(FestivalBean fBean, PagingBean pBean) throws Exception;
+	public List<FestivalBean> searchSelectFestivalList(PagingBean pBean) throws Exception;
 	// 게시글 정보를 전체 리스트 갯수를 가져온다. / 현우
 	public int selectFestivalListTotalCount(PagingBean pBean) throws Exception;
 	// 상세 축제 댓글 불러오기

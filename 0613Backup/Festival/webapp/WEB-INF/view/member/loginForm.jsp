@@ -63,6 +63,17 @@ function memberLoginAjax(){
 		success : function(data) {
 			if (data.result == "ok") {
 				setCookie("userInputId", userInputId, 30);//30일 동안 쿠키 저장
+				//android 호출
+				try {
+					// 값 전달
+					var memId = $("#memberId").val();
+					window.mJSInterface.updateAndToken(memId);
+				} catch(e) {
+					console.log(e);
+				}
+// 				//로그인 성공
+// 				location.replace("/index.do");
+// 				return;
 				location.href="/index.do"
 			} else {
 				alert(data.resultMsg);

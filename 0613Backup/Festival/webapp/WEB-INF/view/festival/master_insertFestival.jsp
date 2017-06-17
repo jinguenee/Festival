@@ -120,6 +120,8 @@
             var org_phone = $("#fb_org_phone").val();
             var org_link = $("#fb_org_link").val();
             var upFile = $("input[name=upFile]");
+            var memberId = "${memberBean.memberId}";
+            var token = "${memberBean.token}";
             
             if ("" == name || "" == detail_intro || "" == detail_fee || "" == detail_parking || "" == detail_time
                   || "" == detail_notice || "" == location_x || "" == location_y || "" == _thema1 || "" == _thema2 || "" == _thema3
@@ -150,7 +152,8 @@
             formData.append("fb_org_name", org_name);
             formData.append("fb_org_phone", org_phone);
             formData.append("fb_org_link", org_link);
-            
+            formData.append("memberId", memberId);
+            formData.append("token", token);
             for (var i = 0; i < upFile.length; i++) {
                formData.append("upFile", upFile[i].files[0]);
             }

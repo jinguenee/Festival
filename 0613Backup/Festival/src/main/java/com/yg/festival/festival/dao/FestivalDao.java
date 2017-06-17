@@ -20,10 +20,7 @@ public interface FestivalDao {
 	// 메인 축제정보 전체 불러오기
 	public List<FestivalBean> selectFestivalList(PagingBean pBean);
 	// 메인 축제정보 검색해서 불러오기 / 현우
-	public List<FestivalBean> searchSelectFestivalList(
-			@Param("festivalBean") FestivalBean fBean,
-			@Param("pagingBean") PagingBean pBean
-	);
+	public List<FestivalBean> searchSelectFestivalList(PagingBean pBean);
 	// 기본 축제정보 전체 불러오기
 	public List<FestivalBasicBean> selectFestivalBasicList(FestivalBasicBean fBBean);
 	// 파일 축제정보 전체 불러오기

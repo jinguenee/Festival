@@ -326,7 +326,7 @@
 			festival_detail_notice,
 			festival_location_x, festival_location_y,
 			thema1, thema2, thema3
-		FROM festival f WHERE 1=1
+		FROM festival WHERE 1=1
 
 		<if test="searchType == 'title'">
 
@@ -334,7 +334,7 @@
 
 			AND festival_name like CONCAT('%', #{searchText}, '%')
 		</if>
-		LIMIT #{pagingBean.startRow}, #{pagingBean.endRow}
+		LIMIT #{startRow}, #{endRow}
 	</select>
 
 	<!-- 전체 레코드 갯수 조회 / 현우 -->

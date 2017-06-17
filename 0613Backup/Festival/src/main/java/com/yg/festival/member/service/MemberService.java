@@ -37,6 +37,9 @@ public interface MemberService {
 
 	/** 회원 아이디 찾기 **/
 	public MemberBean selectMemberId(MemberBean memberBean) throws Exception;
+	
+	/** token값을 넣는다. **/
+	public int updateToken(MemberBean memberBean) throws Exception;
 //	
 //	/** 회원 리스트 **/
 //	public List<MemberBean> memberList(PagingBean pagingBean) throws Exception;

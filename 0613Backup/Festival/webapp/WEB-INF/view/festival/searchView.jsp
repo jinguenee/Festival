@@ -27,6 +27,71 @@
 
 
 <style>
+@media screen and (max-width:767px){
+
+
+form.search_form{
+   width: 100%;
+    margin: auto;
+}
+
+.search_form .form_search_info {
+    height: 40px;
+    width: 55%;
+    border: 1px solid #1b5ac2;
+    background: #ffffff;
+    margin: auto;
+}
+
+.search_form .form_search_info .search_text {
+    font-size: 16px;
+    width: 75%;
+    outline: none;
+    float: left;
+    height: 95%;
+}
+
+.search_form .form_search_info .search_btn {
+    width: 25%;
+    height: 100%;
+    border: 0px;
+    background: #1b5ac2;
+    outline: none;
+    float: right;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+
+h1.searchresult {
+   font-size: 28px;
+   margin-left: 3%;
+}
+
+form.search_form {
+   margin: 0 40% 0 0;
+}
+
+div.search_area {
+   width: 95%;
+   margin: auto;
+   height: auto;
+   margin-left: 2%;
+   margin-right: 8%;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
+
+span.search_info_info {
+   margin-left: 3%;
+   word-spacing: normal;
+   font-size: 13px;
+}
+
+
+
+}
 html, body {
    font-family: 'Noto Sans KR', sans-serif, dotum, '돋움', gulim, '굴림', Arial,
       AppleGothic, verdana, helvetica;
@@ -137,8 +202,9 @@ h1 {
 }
 
 .search_info_info {
-   margin: 0 20px;
+   /* margin: 0 20px; */
    word-spacing: normal;
+   margin-right: 5%;
 }
 
 .search_form {
@@ -164,10 +230,11 @@ h1 {
          <button type="button" class="search_btn" onClick="check()">검색</button>
       </div>
    </form>
+
    </hr>
    </br>
    <div>
-      <h1>"${param.searchText}"&nbsp;검색 결과</h1>
+      <h1 class="searchresult">"${param.searchText}"&nbsp;검색 결과</h1>
    </div>
    </br>
 
@@ -188,29 +255,29 @@ h1 {
    <!-- 검색 결과 나오는 화면 -->
     
    
-   				<div class="page">
-   				
-							<ul>
-							 <c:if test="${pagingBean.groupNo > 1}">
-					               <li><a href="/festival/searchView.do?pageNo=${pBean.pageStartNo - 1}" class="on">&lt;</a></li>
-				            </c:if>
-				            <c:forEach var="i" begin="${pagingBean.pageStartNo}" end="${pagingBean.pageEndNo}">
-				            <c:choose>
-				               <c:when test="${pagingBean.pageNo != i}">
-				                  <li><a href="/festival/searchView.do?pageNo=${i}&searchType=${param.searchType}&searchText=${param.searchText}" class="on">${i}</a></li>
-				               </c:when>
-				               <c:otherwise>
-				                  <li class="on">${i}</li>
-				               </c:otherwise>
-				            </c:choose>
-				            </c:forEach>
-				            <c:if test="${pagingBean.groupNo < pagingBean.totalGroupCount}">
-				               <li><a href="/festival/searchView.do?pageNo=${pBean.pageEndNo + 1}" class="on">&gt;</a></li>
-				            </c:if>
-							
-							</ul>
-						</div>
-						
+               <div class="page">
+               
+                     <ul>
+                      <c:if test="${pagingBean.groupNo > 1}">
+                              <li><a href="/festival/searchView.do?pageNo=${pBean.pageStartNo - 1}" class="on">&lt;</a></li>
+                        </c:if>
+                        <c:forEach var="i" begin="${pagingBean.pageStartNo}" end="${pagingBean.pageEndNo}">
+                        <c:choose>
+                           <c:when test="${pagingBean.pageNo != i}">
+                              <li><a href="/festival/searchView.do?pageNo=${i}&searchType=${param.searchType}&searchText=${param.searchText}" class="on">${i}</a></li>
+                           </c:when>
+                           <c:otherwise>
+                              <li class="on">${i}</li>
+                           </c:otherwise>
+                        </c:choose>
+                        </c:forEach>
+                        <c:if test="${pagingBean.groupNo < pagingBean.totalGroupCount}">
+                           <li><a href="/festival/searchView.do?pageNo=${pBean.pageEndNo + 1}" class="on">&gt;</a></li>
+                        </c:if>
+                     
+                     </ul>
+                  </div>
+                  
    </section>
    <!-- 색션 끝 -->
 
