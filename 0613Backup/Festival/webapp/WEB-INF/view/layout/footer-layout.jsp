@@ -10,6 +10,12 @@
 			}
 </style>
 <!--푸터 -->
+	<div class="back"  style="position: fixed;
+          right: 10%;
+          bottom: 50px;
+          z-index: 999;">
+      <a id="MOVE_TOP_BTN" href="javascript:history.back();"> <img src="/images/bkarrow.png" alt="Go to W3Schools!" width="42" height="42" border="0"></a>
+   </div>
 <footer>
 	<div class="grid">
 		<ul>

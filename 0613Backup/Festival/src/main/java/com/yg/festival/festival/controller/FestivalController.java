@@ -301,8 +301,8 @@ public class FestivalController {
 					PushMsgBean msgBean = new PushMsgBean();
 					msgBean.setTo( dbMemBean.getToken() );
 					PushMsgBean.Data data = new PushMsgBean.Data();
-					data.setTitle("테스트 이다. 받아라");
-					data.setMessage("메시지이다. 받아라");
+					data.setTitle("Festival");
+					data.setMessage("새로운 축제 '"+fBean.getFestival_name()+"'가(이) 등록되었습니다. 확인 해 주세요. ");
 					msgBean.setData(data);
 					//푸시발송
 					boolean resBool = FCMSender.sendPushMsg(msgBean);

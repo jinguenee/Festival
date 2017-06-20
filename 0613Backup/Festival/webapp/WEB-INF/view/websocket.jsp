@@ -67,8 +67,8 @@
     <script type="text/javascript">
        
         //웹소켓 초기화
-//         var webSocket = new WebSocket("ws://localhost:8082/broadsocket");
-        var webSocket = new WebSocket("ws://127.0.0.1:80/broadsocket");
+        var webSocket = new WebSocket("ws://localhost:8082/broadsocket");
+//         var webSocket = new WebSocket("ws://localhost:8009/broadsocket");
         var messageTextArea = document.getElementById("messageTextArea");
         
         // 관리자인지, 일반회원인지 구분하기 위해 회원 값을 얻어옴

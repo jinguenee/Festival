@@ -34,7 +34,10 @@ header, section, footer {
 	color: #666;
 	font-weight: 300;
 }
-
+.back{
+      display: none;
+      
+   }
 /*모바일용 초기설정*/
 .m_head {
 	display: none;
@@ -211,7 +214,10 @@ footer .grid ul li:nth-child(3) {
 		height: 65px;
 		padding: 0 2%;
 	}
-
+	.back{
+	      display: block;
+         
+   }
 	/*header 부분의 메뉴박스를 없앤다*/
 	.menu_box {
 		display: none;
