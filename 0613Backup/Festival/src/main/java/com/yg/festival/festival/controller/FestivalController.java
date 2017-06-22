@@ -477,7 +477,6 @@ public class FestivalController {
 					if (res > 0) {
 						System.out.println("null 처리 성공!");
 					}
-//					break;
 				}
 			}
 

@@ -32,7 +32,7 @@
   <class id="4" language="java" name="com.yg.festival.common.controller.IndexController" project="Festival" 
     file="/Festival/src/main/java/com/yg/festival/common/controller/IndexController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1409" y="1640"/>    
+    <position height="-1" width="-1" x="1427" y="1533"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -128,7 +128,7 @@
   <class id="14" language="java" name="com.yg.festival.festival.controller.FestivalController" project="Festival" 
     file="/Festival/src/main/java/com/yg/festival/festival/controller/FestivalController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1084" y="556"/>    
+    <position height="-1" width="-1" x="1192" y="534"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -137,7 +137,7 @@
   </class>  
   <interface id="15" language="java" name="com.yg.festival.festival.dao.FestivalDao" project="Festival" 
     file="/Festival/src/main/java/com/yg/festival/festival/dao/FestivalDao.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1043" y="2197"/>    
+    <position height="-1" width="-1" x="1161" y="2429"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -164,7 +164,7 @@
   </class>  
   <class id="18" language="java" name="com.yg.festival.board.bean.BoardReplyBean" project="Festival" 
     file="/Festival/src/main/java/com/yg/festival/board/bean/BoardReplyBean.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1085" y="-171"/>    
+    <position height="-1" width="-1" x="1043" y="-167"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -174,7 +174,7 @@
   <class id="19" language="java" name="com.yg.festival.board.controller.BoardController" project="Festival" 
     file="/Festival/src/main/java/com/yg/festival/board/controller/BoardController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1393" y="-188"/>    
+    <position height="-1" width="-1" x="1364" y="-196"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -192,7 +192,7 @@
   </interface>  
   <interface id="21" language="java" name="com.yg.festival.board.dao.BoardFileDao" project="Festival" 
     file="/Festival/src/main/java/com/yg/festival/board/dao/BoardFileDao.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1399" y="258"/>    
+    <position height="-1" width="-1" x="1378" y="202"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -211,7 +211,7 @@
   <class id="23" language="java" name="com.yg.festival.board.service.BoardServiceImpl" project="Festival" 
     file="/Festival/src/main/java/com/yg/festival/board/service/BoardServiceImpl.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1794" y="150"/>    
+    <position height="-1" width="-1" x="1806" y="41"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -231,7 +231,7 @@
   <class id="25" language="java" name="com.yg.festival.festival.service.FestivalServiceImpl" project="Festival" 
     file="/Festival/src/main/java/com/yg/festival/festival/service/FestivalServiceImpl.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1038" y="1641"/>    
+    <position height="-1" width="-1" x="1040" y="1715"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -269,7 +269,7 @@
   <interface id="29" language="java" name="com.yg.festival.member.service.MemberService" project="Festival" 
     file="/Festival/src/main/java/com/yg/festival/member/service/MemberService.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1749" y="1086"/>    
+    <position height="-1" width="-1" x="1689" y="1007"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -304,110 +304,146 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="33">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="34" name="memberService"/>      
-      <multiplicity id="35" minimum="0" maximum="1"/>    
+  <realization id="33">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="22"/>  
+  </realization>  
+  <realization id="34">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="29"/>  
+  </realization>  
+  <generalization id="35">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="36">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="37" name="memberService">        
+        <position height="0" width="0" x="-60" y="-79"/>      
+      </attribute>      
+      <multiplicity id="38" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-60" y="-79"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="29" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="36">    
+  <association id="39">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="37" name="festivalDao">        
-        <position height="0" width="0" x="-34" y="1672"/>      
+      <attribute id="40" name="festivalService">        
+        <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="38" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-34" y="1672"/>      
+      <multiplicity id="41" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="39">    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="40" name="boardDao"/>      
-      <multiplicity id="41" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
+    <end type="TARGET" refId="24" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="42">    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="43" name="boardFileDao"/>      
-      <multiplicity id="44" minimum="0" maximum="1"/>    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="43" name="memberService">        
+        <position height="0" width="0" x="-60" y="-79"/>      
+      </attribute>      
+      <multiplicity id="44" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-60" y="-79"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="21" navigable="true"/>    
+    <end type="TARGET" refId="29" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="45">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="29"/>  
-  </realization>  
-  <generalization id="46">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="1"/>  
-  </generalization>  
-  <association id="47">    
+  <association id="45">    
     <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="48" name="memberDao"/>      
-      <multiplicity id="49" minimum="0" maximum="1"/>    
+      <attribute id="46" name="memberDao">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="47" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="28" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="50">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="24"/>  
-  </realization>  
+  <association id="48">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="49" name="boardService">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="50" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <association id="51">    
     <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="52" name="festivalService"/>      
-      <multiplicity id="53" minimum="0" maximum="1"/>    
+      <attribute id="52" name="festivalService">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="53" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="24" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="54">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="55" name="memberService"/>      
-      <multiplicity id="56" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="57">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="58" name="boardService"/>      
-      <multiplicity id="59" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="60">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="61" name="festivalService"/>      
-      <multiplicity id="62" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="24" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="63">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="22"/>  
-  </realization>  
-  <association id="64">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="65" name="festivalDao"/>      
-      <multiplicity id="66" minimum="0" maximum="1"/>    
+      <attribute id="55" name="festivalDao">        
+        <position height="0" width="0" x="84" y="1904"/>      
+      </attribute>      
+      <multiplicity id="56" minimum="0" maximum="1">        
+        <position height="0" width="0" x="84" y="1904"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="15" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="67">    
+  <generalization id="57">    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="1"/>  
   </generalization>  
+  <association id="58">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="59" name="boardFileDao">        
+        <position height="0" width="0" x="-21" y="-56"/>      
+      </attribute>      
+      <multiplicity id="60" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-21" y="-56"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="61">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="24"/>  
+  </realization>  
+  <association id="62">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="63" name="festivalDao">        
+        <position height="0" width="0" x="118" y="232"/>      
+      </attribute>      
+      <multiplicity id="64" minimum="0" maximum="1">        
+        <position height="0" width="0" x="118" y="232"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="65">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="66" name="boardDao">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="67" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

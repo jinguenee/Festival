@@ -340,8 +340,15 @@
 	<!-- 전체 레코드 갯수 조회 / 현우 -->
 	<select id="selectFestivalListTotalCount" parameterType="pagingBean"
 		resultType="int">
-		SELECT COUNT(*) FROM festival WHERE 1=1
-		<if test="searchType == 'title'"> AND festival_name like CONCAT('%', #{searchText}, '%')
+		SELECT 
+			COUNT(*) 
+		FROM 
+			festival 
+		WHERE 
+			1=1
+		<if test="searchType == 'title'"> 
+		AND 
+		 	festival_name like CONCAT('%', #{searchText}, '%')
 		</if>
 	</select>
 	
